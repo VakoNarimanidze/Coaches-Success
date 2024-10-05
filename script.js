@@ -44,27 +44,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     button4.addEventListener('click', function () {
-        window.location.href = '/Services.html';
+        window.location.href = './pages/Services.html';
     });
 
     setActiveLink();
 });
 
+// underline///
 
-const CategoryTabs = document.querySelectorAll('.service-option');
-const underline = document.querySelector('.underline');
+document.addEventListener('DOMContentLoaded', function () {
+    const CategoryTabs = document.querySelectorAll('.service-option');
+    const underline = document.querySelector('.underline');
 
-function setUnderline(option) {
-    const optionRect = option.getBoundingClientRect();
-    const selectRect = document.querySelector('.Select').getBoundingClientRect();
+    function setUnderline(option) {
+        const optionRect = option.getBoundingClientRect();
+        const selectRect = document.querySelector('.Select').getBoundingClientRect();
 
-    const left = optionRect.left - selectRect.left + optionRect.width / 1 - 60;
-    underline.style.left = `${left}px`;
-}
+        const left = optionRect.left - selectRect.left + optionRect.width / 2 - (underline.offsetWidth / 1);
+        underline.style.left = `${left}px`;
+    }
 
+    setUnderline(CategoryTabs[0]);
 
-setUnderline(CategoryTabs[0]);
+    CategoryTabs.forEach(option => {
+        option.addEventListener('click', function () {
 
+            setUnderline(option);
+        });
+    });
+});
 // type selection
 
 
@@ -103,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
         moreServicesButton.addEventListener('click', function () {
             console.log('Button clicked! Redirecting to services.html...');
 
-            window.location.href = 'Services.html';
+            window.location.href = './pages/Services.html';
         });
     } else {
         console.error('Button with class "button4" not found.');
