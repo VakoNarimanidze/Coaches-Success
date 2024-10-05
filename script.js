@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('nav ul li a');
-
+    const button4 = document.getElementById('button4');
 
     function resetLinkColors() {
         navLinks.forEach(link => {
@@ -8,11 +8,26 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    const activeLink = localStorage.getItem('activeLink');
-    if (activeLink) {
-        const savedLink = document.querySelector(`a[href="${activeLink}"]`);
-        if (savedLink) {
-            savedLink.style.color = '#317F81';
+    function setActiveLink() {
+        let foundActive = false;
+
+        navLinks.forEach(link => {
+            const section = document.querySelector(link.getAttribute('href'));
+            if (section) {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (window.scrollY >= sectionTop - 10 && window.scrollY < sectionTop + sectionHeight) {
+                    resetLinkColors();
+                    link.style.color = '#317F81';
+                    foundActive = true;
+                }
+            }
+        });
+
+
+        if (!foundActive) {
+            resetLinkColors();
         }
     }
 
@@ -23,10 +38,17 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('activeLink', this.getAttribute('href'));
         });
     });
+
+
+    window.addEventListener('scroll', setActiveLink);
+
+
+    button4.addEventListener('click', function () {
+        window.location.href = '/Services.html';
+    });
+
+    setActiveLink();
 });
-
-
-
 
 
 const CategoryTabs = document.querySelectorAll('.service-option');
@@ -42,6 +64,8 @@ function setUnderline(option) {
 
 
 setUnderline(CategoryTabs[0]);
+
+// type selection
 
 
 CategoryTabs.forEach(option => {
@@ -70,9 +94,21 @@ CategoryTabs.forEach(option => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
 
-// Initialize card display on page load
-updateCards(currentSelection);
+    const moreServicesButton = document.querySelector('#button4');
+
+    if (moreServicesButton) {
+
+        moreServicesButton.addEventListener('click', function () {
+            console.log('Button clicked! Redirecting to services.html...');
+
+            window.location.href = 'Services.html';
+        });
+    } else {
+        console.error('Button with class "button4" not found.');
+    }
+});
 
 
 
@@ -125,3 +161,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
