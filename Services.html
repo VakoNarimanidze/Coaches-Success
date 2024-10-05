@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Services</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+        <div class="main-container">
+            <header>
+                <nav>
+                    <div class="logo">
+                        <a href="/index.html">
+                            <h2>ALLAN JOHNSON</h2>
+                            <h4>Personal Life Coach</h4>
+                        </a>
+                    </div>
+                    <ul>
+                        <li><a href="index.html#SecondSection">About</a></li>
+                        <li><a href="/Services.html">Services</a></li>
+                        <li><a href="">Plans</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Guides</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                    <div class="log-in">
+                        <i class="fas fa-bell"></i>
+                        <i class="fas fa-circle"></i>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </nav>
+            </header>
+
+            <section class="BG-Img">
+                <h2>SERVICES</h2>
+                <div class="Select">
+                    <div class="service-option" data-service="all">
+                        <h4>All Services</h4>
+                    </div>
+                    <div class="service-option" data-service="personal">
+                        <h4>Personal Growth</h4>
+                    </div>
+                    <div class="service-option" data-service="career">
+                        <h4>Career Ambitions</h4>
+                    </div>
+                    <hr>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="ConsultationCards">
+                    <div class="Free-Consultation">
+                        <h4>Free Consultation</h4>
+                        <p>Use this area to describe one of your services.</p>
+                        <h5>45 min</h5>
+                        <button>Book Now</button>
+                    </div>
+                    <div class="Online-Coaching">
+                        <h4>Online Coaching</h4>
+                        <p>Use this area to describe one of your services.</p>
+                        <h5>$70</h5>
+                        <button>Book Now</button>
+                    </div>
+                    <div class="Self-Improvement-Workshop">
+                        <h4>Self-Improvement Workshop</h4>
+                        <p>Use this area to describe one of your services.</p>
+                        <h5>$90</h5>
+                        <button>Book Now</button>
+                    </div>
+                    <div class="Corporate-Life">
+                        <h4>Corporate Life</h4>
+                        <p>Use this area to describe one of your services.</p>
+                        <h5>1 hr</h5>
+                        <h5>$70</h5>
+                        <button>Book Now</button>
+                    </div>
+                    <div class="Career-Coaching">
+                        <h4>Career Coaching</h4>
+                        <p>Use this area to describe one of your services.</p>
+                        <h5>1 hr</h5>
+                        <h5>$80</h5>
+                        <button>Book Now</button>
+                    </div>
+                    <div class="Group-Coaching">
+                        <h4>Group Coaching</h4>
+                        <p>Use this area to describe one of your services.</p>
+                        <h5>1 hr</h5>
+                        <h5>$90</h5>
+                        <button>Book Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="Contact">
+                <div class="LeftFooter">
+                    <h2>CONTACT</h2>
+                    <div class="contactStuff">
+                        <p>500 Terry Francine Street, <br>San Francisco, CA 94158</p>
+                        <p>Tel: 123-456-7890 <br>Fax: 123-456-7890</p>
+                        <p>vako.narimanidze5@gmail.com</p>
+                    </div>
+                    <div class="Links">
+                        <a target="_blank" class="FirstLink" href="https://www.facebook.com/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" href="https://x.com/home"><i class="fab fa-twitter"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <h6>© 2035 by Personal Life Coach. <br> Powered by <a target="_blank"
+                            href="https://www.wix.com/website-template/view/html/1905?originUrl=https%3A%2F%2Fwww.wix.com%2Fwebsite%2Ftemplates&tpClick=view_button&esi=f5a40680-a78a-437f-80b5-70b1cad7aff2">Vako
+                            Narimanidze</a>
+                    </h6>
+                </div>
+
+                <div class="RightFooter">
+                    <div class="inline">
+                        <div class="field-group">
+                            <label for="firstName">First Name*</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="field-group">
+                            <label for="lastName">Last Name*</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <label for="email">Email*</label>
+
+                    <input type="email" id="email" name="email" required>
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message"></textarea>
+                    <div class="buttonFlex">
+                        <button>Submit</button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>
