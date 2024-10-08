@@ -60,20 +60,34 @@ document.addEventListener('DOMContentLoaded', function () {
         const optionRect = option.getBoundingClientRect();
         const selectRect = document.querySelector('.Select').getBoundingClientRect();
 
-        const left = optionRect.left - selectRect.left + optionRect.width / 2 - (underline.offsetWidth / 1);
-        underline.style.left = `${left}px`;
+        const left = optionRect.left - selectRect.left;
+        underline.style.left = `${left - 13}px`;
+        underline.style.width = `${optionRect.width + 27}px`;
     }
 
     setUnderline(CategoryTabs[0]);
 
     CategoryTabs.forEach(option => {
         option.addEventListener('click', function () {
-
             setUnderline(option);
         });
     });
 });
+
 // type selection
+
+
+const CategoryTabs = document.querySelectorAll('.service-option');
+const underline = document.querySelector('.underline');
+const allCards = document.querySelectorAll('.ConsultationCards > div');
+
+
+function setUnderline(option) {
+    const optionRect = option.getBoundingClientRect();
+    const parentRect = option.parentElement.getBoundingClientRect();
+
+    underline.style.width = `${optionRect.width}px`;
+}
 
 
 CategoryTabs.forEach(option => {
@@ -81,26 +95,37 @@ CategoryTabs.forEach(option => {
         CategoryTabs.forEach(opt => opt.classList.remove('selected'));
         option.classList.add('selected');
 
+
         setUnderline(option);
 
         const serviceType = option.getAttribute('data-service');
-        const allCards = document.querySelectorAll('.ConsultationCards div');
-
         allCards.forEach(card => {
             if (serviceType === 'all') {
                 card.style.display = 'block';
             } else if (serviceType === 'personal') {
-                card.style.display = card.classList.contains('Free-Consultation') ||
+                card.style.display = (
+                    card.classList.contains('Free-Consultation') ||
                     card.classList.contains('Online-Coaching') ||
-                    card.classList.contains('Self-Improvement-Workshop') ? 'block' : 'none';
+                    card.classList.contains('Self-Improvement-Workshop')
+                ) ? 'block' : 'none';
             } else if (serviceType === 'career') {
-                card.style.display = card.classList.contains('Corporate-Life') ||
+                card.style.display = (
+                    card.classList.contains('Corporate-Life') ||
                     card.classList.contains('Career-Coaching') ||
-                    card.classList.contains('Group-Coaching') ? 'block' : 'none';
+                    card.classList.contains('Group-Coaching')
+                ) ? 'block' : 'none';
             }
         });
     });
 });
+
+window.addEventListener('load', () => {
+    const selectedTab = document.querySelector('.service-option.selected') || CategoryTabs[0];
+    selectedTab.classList.add('selected');
+    setUnderline(selectedTab);
+});
+
+// -------------------------------------------------------------------------//
 
 document.addEventListener('DOMContentLoaded', function () {
 

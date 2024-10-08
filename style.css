@@ -546,10 +546,8 @@ section h2::before {
     bottom: 0;
     left: 50%;
     height: 4px;
-    transform: translateX(55.5%);
     background-color: #3A7C80;
     transition: left 0.3s ease;
-    width: 150px;
 }
 
 .service-option h4 {
