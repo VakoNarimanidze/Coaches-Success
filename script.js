@@ -142,6 +142,23 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Button with class "button4" not found.');
     }
 });
+// --------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const moreServicesButton = document.querySelector('#FSbutton');
+
+    if (moreServicesButton) {
+
+        moreServicesButton.addEventListener('click', function () {
+            console.log('Button clicked! Redirecting to services.html...');
+
+            window.location.href = './pages/Services.html';
+        });
+    } else {
+        console.error('Button with class "button4" not found.');
+    }
+});
 
 
 
@@ -194,5 +211,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-
