@@ -16,6 +16,10 @@ body {
 body.fade-out {
     opacity: 0;
 }
+.main-container{
+    max-width: 1440px;
+    margin: 0 auto;
+}
 
 header {
     position: sticky;
@@ -79,12 +83,40 @@ nav ul li a {
 
 .log-in {
     padding-right: 245px;
+    display: flex;
+    align-items: center;
+}
+.log-in i{
+    color: #317F81;
+    background-color: white;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.log-in h4 a{
+    color: #317F81;
+    text-decoration: none;
+    font-weight: 300;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    vertical-align: middle;
+    font-size: 15px;
 }
 
-.log-in i {
-    padding-right: 10px;
-    color: #317F81;
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 30px;
 }
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px;
+    transition: 0.3s ease;
+}
+
+
 
 /* First Section */
 .FirstSection {
@@ -240,7 +272,6 @@ nav ul li a {
     background-size: cover;
 }
 
-/* ThirdSection */
 .ThirdSection h2::before {
     content: '';
     display: block;
@@ -259,14 +290,13 @@ nav ul li a {
     padding-top: 30px;
 }
 
-/* Cards */
+/* ThirdSection Cards */
 .Cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    column-gap: 20px;
-    z-index: 1;
-    width: 60%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -360,7 +390,6 @@ footer {
     padding: 20px;
     justify-content: space-between;
     flex-wrap: wrap;
-    /* Added for responsiveness */
 }
 
 .inline .field-group {
@@ -565,11 +594,12 @@ section h2::before {
 }
 
 .ConsultationCards {
-    display: grid;
-    grid-template-columns: repeat(3, 280px);
+    display: flex;
     justify-content: center;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 30px;
     padding: 20px;
+    padding-inline: 120px;
 }
 
 .ConsultationCards div {
@@ -773,15 +803,177 @@ section h2::before {
 
 /* Make the layout responsive */
 
-/* For Tablet Resolution */
-@media (max-width: 1024px) {
-    .ConsultationCards {
-        grid-template-columns: repeat(2, 1fr);
+/* Media Query for 1024px (Tablet Landscape) */
+
+@media (max-width:1139px){
+    .Services-Section{
+        height: 1300px;
+        padding-inline: 30px;
     }
 }
-/* For Phone Resolution */
-@media (max-width: 600px) {
-    .ConsultationCards {
-        grid-template-columns: 1fr;
+
+/* @media(max-width:889px){
+    .Services-Section{
+        height: 1h;
+    }
+} */
+@media (max-width: 1024px) {
+    .main-container{
+        margin: 0 0;
+    }
+    nav ul li {
+        padding-left: 20px; /* Reduce padding between nav items */
+    }
+    .logo {
+        padding-left: 100px; /* Adjust logo padding */
+    }
+    .log-in {
+        padding-right: 100px; /* Adjust login padding */
+    }
+    .FirstSection {
+        background-size: cover; /* Ensure background fits */
+    }
+    .personImg {
+        width: 600px;
+        height: 700px; /* Resize the image */
+    }
+    .ThirdSection{
+        min-height: 1100px;
+    }
+    .ThirdSection .Cards{
+        margin-top: 20px;
+    }
+    .LeftFloat {
+        padding-left: 100px; /* Adjust content padding */
+    }
+    .Cards {
+        width: 80%; /* Adjust width of cards */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+    }
+    .PlansBoxFlex {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .PlansCard {
+        max-width: 250px; /* Resize plan cards */
+    }
+}
+
+/* Media Query for 768px (Tablet Portrait) */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        text-align: center;
+        z-index: 10;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    .log-in {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    /* Center logo */
+    .logo {
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .logo {
+        padding-left: 50px; /* Adjust for smaller screens */
+    }
+    .log-in {
+        padding-right: 50px; /* Adjust login padding */
+    }
+    .FirstSection h1 {
+        font-size: 70px; /* Resize large text */
+    }
+    .personImg {
+        width: 500px;
+        height: 600px; /* Resize image */
+    }
+
+    .ThirdSection{
+        min-height: 1100px;
+    }
+    .LeftFloat {
+        padding-left: 50px; /* Adjust padding */
+    }
+    .Cards {
+        width: 90%; /* Further reduce card width */
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+    .PlansBoxFlex {
+        flex-direction: column;
+        align-items: center; /* Stack plan cards vertically */
+    }
+    .PlansCard {
+        max-width: 220px; /* Further resize plan cards */
+    }
+}
+
+@media (max-width: 668px) {
+    .ThirdSection{
+        height:1500px ;
+    }
+}
+
+/* Media Query for 480px (Mobile) */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px; /* Stack nav items */
+    }
+    .logo {
+        padding-left: 0px;
+    }
+    .log-in {
+        padding-right: 0px;
+    }
+    .FirstSection h1 {
+        font-size: 50px; /* Resize text for small screens */
+    }
+    .personImg {
+        width: 100%;
+        height: 400px; /* Further reduce image size */
+    }
+    .LeftFloat {
+        padding-left: 10px;
+        width: 90%; /* Reduce content width */
+    }
+    .Cards {
+        width: 100%; /* Full width for mobile */
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+    .PlansBoxFlex {
+        flex-direction: column;
+        align-items: center;
+    }
+    .PlansCard {
+        max-width: 200px; /* Smaller plan cards */
     }
 }

@@ -211,3 +211,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// burger-Nav///
+// Toggle the burger menu visibility on click
+document.addEventListener('DOMContentLoaded', function() {
+    // Toggle the burger menu visibility on click
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (burger && navLinks) {
+        burger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    } else {
+        console.error("Burger menu or nav-links not found");
+    }
+
+    // Highlight the active link based on the current URL
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        if (link.href.includes(currentPath)) {
+            link.classList.add('active');
+        }
+    });
+
+    // Example underline effect based on the active link
+    const underline = document.querySelector('.underline');
+    const activeLink = document.querySelector('a.active');
+    if (underline && activeLink) {
+        const rect = activeLink.getBoundingClientRect();
+        underline.style.width = `${rect.width}px`;
+        underline.style.left = `${rect.left}px`;
+    } else {
+        console.error("Underline or active link not found");
+    }
+});
