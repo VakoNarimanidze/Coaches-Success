@@ -25,7 +25,7 @@ body.fade-out {
 header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 999;
     width: 100%;
     background-color: white;
 }
@@ -80,10 +80,11 @@ nav ul li a {
 
 .logo h4 {
     font-weight: 400;
+    margin-bottom: 20px;
 }
 
-.log-in {
-    padding-right: 245px;
+.LogInFlex div {
+    padding-right: 105px;
     display: flex;
     align-items: center;
 }
@@ -107,18 +108,75 @@ nav ul li a {
     flex-direction: column;
     cursor: pointer;
     margin-right: 30px;
-}
-
-.burger span {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    margin: 4px;
-    transition: 0.3s ease;
+    font-size: 30px;
 }
 
 
+.burger.toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
 
+.burger.toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.bottom-line {
+    height: 2px;
+    background-color: #000; 
+    width: 100%; 
+    display: none;
+  }
+  
+/* -------ChatIcon---------- */
+
+/* For Full Resolution */
+.FullResChatIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: white;
+    width: 180px;
+    height: 55px;
+    font-size: 20px;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    right: 40px;
+    cursor: pointer;
+}
+
+.FullResChatIcon i{
+    margin-right: 10px;
+}
+
+/* For Tablet and Mobile Resolution */
+.PhoneResChatIcon,.ScrollUp{
+    width: 60px;
+    height: 60px;
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    cursor: pointer;
+} 
+.ScrollUp {
+        bottom: 170px;
+        right: 20px;
+        z-index: 98; 
+    }
 /* First Section */
 .FirstSection {
     width: 100%;
@@ -151,7 +209,6 @@ nav ul li a {
     line-height: normal;
     text-align: center;
     font-size: 23px;
-    margin-top: 40px;
 }
 
 .absolute button {
@@ -180,16 +237,11 @@ nav ul li a {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    /* flex-wrap: wrap; */
 }
 
 .personImg {
-    /* background-image: url("./Images/person2.jpg"); */
     width: 100%;
     height: 800px;
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
     right: 50%;
 }
 
@@ -831,16 +883,14 @@ section h2::before {
     }
 }
 
-/* @media(max-width:889px){
-    .Services-Section{
-        height: 1h;
-    }
-} */
 
  /* Media Query for 1024px (Tablet Landscape) */
 @media (max-width: 1024px) {
     .main-container{
         margin: 0 0;
+    }
+    header{
+        position: static;
     }
     nav {
         display: flex;
@@ -878,17 +928,24 @@ section h2::before {
     }
 
     .logo {
-        padding-left: 100px; /* Adjust logo padding */
+        padding-left: 100px; 
     }
     .log-in {
-        padding-right: 100px; /* Adjust login padding */
+        padding-right: 100px; 
     }
+    .FullResChatIcon{
+        display: none;
+    }
+    .PhoneResChatIcon,.ScrollUp{
+        display: flex;
+    }
+
     .FirstSection {
-        background-size: cover; /* Ensure background fits */
+        background-size: cover; 
     }
     .personImg {
         width: 600px;
-        height: 700px; /* Resize the image */
+        height: 700px; 
     }
     .ThirdSection{
         min-height: 1100px;
@@ -897,18 +954,18 @@ section h2::before {
         margin-top: 20px;
     }
     .LeftFloat {
-        padding-left: 100px; /* Adjust content padding */
+        padding-left: 100px; 
     }
     .Cards {
-        width: 80%; /* Adjust width of cards */
-        grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+        width: 80%; 
+        grid-template-columns: repeat(2, 1fr); 
     }
     .PlansBoxFlex {
         flex-wrap: wrap;
         justify-content: space-around;
     }
     .PlansCard {
-        max-width: 250px; /* Resize plan cards */
+        max-width: 250px; 
     }
     footer{
         display: flex;
@@ -928,46 +985,50 @@ section h2::before {
 
 /* Media Query for 768px (Tablet Portrait) */
 @media (max-width: 768px) {
-    .BG-Img{
-        background-image: none;
+    .SecondSection{
+        flex-wrap: wrap;
+        justify-content: center;
+        
+     }
+    .personImg{
+        margin-top: 40px;
     }
     
-    /* Center logo */
     .logo {
         text-align: start;
         padding-left: 0;
         width: 100%;
     }
     .logo {
-        padding-left: 50px; /* Adjust for smaller screens */
+        padding-left: 50px; 
     }
     .log-in {
-        padding-right: 50px; /* Adjust login padding */
+        padding-right: 50px; 
     }
     .FirstSection h1 {
-        font-size: 70px; /* Resize large text */
+        font-size: 70px; 
     }
     .personImg {
         width: 500px;
-        height: 600px; /* Resize image */
+        height: 600px; 
     }
 
     .ThirdSection{
         min-height: 1100px;
     }
     .LeftFloat {
-        padding-left: 50px; /* Adjust padding */
+        padding-left: 50px; 
     }
     .Cards {
-        width: 90%; /* Further reduce card width */
-        grid-template-columns: 1fr; /* Single column layout */
+        width: 90%; 
+        grid-template-columns: 1fr; 
     }
     .PlansBoxFlex {
         flex-direction: column;
-        align-items: center; /* Stack plan cards vertically */
+        align-items: center; 
     }
     .PlansCard {
-        max-width: 220px; /* Further resize plan cards */
+        max-width: 220px; 
     }
 }
 
@@ -978,7 +1039,18 @@ section h2::before {
         margin: 0px 0px;
     }
     .ThirdSection{
-        height:1500px ;
+        height:1350px ;
+        background-image: none;
+    }
+    .ThirdSection h2{
+        margin-left: 185px;
+    }
+    .CardButton1{
+        margin: 20px;
+    }
+    .CardButton2,.CardButton3{
+       margin-top: 10px;
+       margin-bottom: 20px;
     }
 }
 
@@ -987,7 +1059,7 @@ section h2::before {
     nav ul {
         flex-direction: column;
         align-items: center;
-        padding-top: 10px; /* Stack nav items */
+        padding-top: 10px; 
     }
     .logo {
         padding-left: 0px;
@@ -996,25 +1068,25 @@ section h2::before {
         padding-right: 0px;
     }
     .FirstSection h1 {
-        font-size: 50px; /* Resize text for small screens */
+        font-size: 50px;
     }
     .personImg {
         width: 100%;
-        height: 400px; /* Further reduce image size */
+        height: 400px; 
     }
     .LeftFloat {
         padding-left: 10px;
-        width: 90%; /* Reduce content width */
+        width: 90%; 
     }
     .Cards {
-        width: 100%; /* Full width for mobile */
-        grid-template-columns: 1fr; /* Single column layout */
+        width: 100%; 
+        grid-template-columns: 1fr; 
     }
     .PlansBoxFlex {
         flex-direction: column;
         align-items: center;
     }
     .PlansCard {
-        max-width: 200px; /* Smaller plan cards */
+        max-width: 200px;
     }
 }

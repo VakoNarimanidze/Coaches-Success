@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
         let foundActive = false;
 
         navLinks.forEach(link => {
-            const section = document.querySelector(link.getAttribute('href'));
+            const targetHref = link.getAttribute('href');
+            const section = document.querySelector(targetHref.startsWith('#') ? targetHref : `#${targetHref.split('/').pop()}`);
+
             if (section) {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.offsetHeight;
@@ -24,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
-
 
         if (!foundActive) {
             resetLinkColors();
@@ -39,9 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-
     window.addEventListener('scroll', setActiveLink);
-
 
     button4.addEventListener('click', function () {
         window.location.href = './pages/Services.html';
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // underline///
-
 document.addEventListener('DOMContentLoaded', function () {
     const CategoryTabs = document.querySelectorAll('.service-option');
     const underline = document.querySelector('.underline');
@@ -65,106 +63,96 @@ document.addEventListener('DOMContentLoaded', function () {
         underline.style.width = `${optionRect.width + 27}px`;
     }
 
-    setUnderline(CategoryTabs[0]);
+    if (CategoryTabs.length) {
+        setUnderline(CategoryTabs[0]);
 
-    CategoryTabs.forEach(option => {
-        option.addEventListener('click', function () {
-            setUnderline(option);
+        CategoryTabs.forEach(option => {
+            option.addEventListener('click', function () {
+                setUnderline(option);
+            });
         });
-    });
+    }
 });
 
 // type selection
-
-
 const CategoryTabs = document.querySelectorAll('.service-option');
 const underline = document.querySelector('.underline');
 const allCards = document.querySelectorAll('.ConsultationCards > div');
 
-
 function setUnderline(option) {
     const optionRect = option.getBoundingClientRect();
-    const parentRect = option.parentElement.getBoundingClientRect();
-
     underline.style.width = `${optionRect.width}px`;
 }
 
+if (CategoryTabs.length) {
+    CategoryTabs.forEach(option => {
+        option.addEventListener('click', () => {
+            CategoryTabs.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
 
-CategoryTabs.forEach(option => {
-    option.addEventListener('click', () => {
-        CategoryTabs.forEach(opt => opt.classList.remove('selected'));
-        option.classList.add('selected');
+            setUnderline(option);
 
-
-        setUnderline(option);
-
-        const serviceType = option.getAttribute('data-service');
-        allCards.forEach(card => {
-            if (serviceType === 'all') {
-                card.style.display = 'block';
-            } else if (serviceType === 'personal') {
-                card.style.display = (
-                    card.classList.contains('Free-Consultation') ||
-                    card.classList.contains('Online-Coaching') ||
-                    card.classList.contains('Self-Improvement-Workshop')
-                ) ? 'block' : 'none';
-            } else if (serviceType === 'career') {
-                card.style.display = (
-                    card.classList.contains('Corporate-Life') ||
-                    card.classList.contains('Career-Coaching') ||
-                    card.classList.contains('Group-Coaching')
-                ) ? 'block' : 'none';
-            }
+            const serviceType = option.getAttribute('data-service');
+            allCards.forEach(card => {
+                if (serviceType === 'all') {
+                    card.style.display = 'block';
+                } else if (serviceType === 'personal') {
+                    card.style.display = (
+                        card.classList.contains('Free-Consultation') ||
+                        card.classList.contains('Online-Coaching') ||
+                        card.classList.contains('Self-Improvement-Workshop')
+                    ) ? 'block' : 'none';
+                } else if (serviceType === 'career') {
+                    card.style.display = (
+                        card.classList.contains('Corporate-Life') ||
+                        card.classList.contains('Career-Coaching') ||
+                        card.classList.contains('Group-Coaching')
+                    ) ? 'block' : 'none';
+                }
+            });
         });
     });
-});
+}
 
 window.addEventListener('load', () => {
     const selectedTab = document.querySelector('.service-option.selected') || CategoryTabs[0];
-    selectedTab.classList.add('selected');
-    setUnderline(selectedTab);
+    if (selectedTab) {
+        selectedTab.classList.add('selected');
+        setUnderline(selectedTab);
+    } else {
+        console.error('No selected tab found.');
+    }
 });
 
 // -------------------------------------------------------------------------//
-
 document.addEventListener('DOMContentLoaded', function () {
-
     const moreServicesButton = document.querySelector('#button4');
 
     if (moreServicesButton) {
-
         moreServicesButton.addEventListener('click', function () {
             console.log('Button clicked! Redirecting to services.html...');
-
             window.location.href = './pages/Services.html';
         });
     } else {
-        console.error('Button with class "button4" not found.');
+        console.error('Button with ID "button4" not found.');
     }
 });
 // --------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
-
     const moreServicesButton = document.querySelector('#FSbutton');
 
     if (moreServicesButton) {
-
         moreServicesButton.addEventListener('click', function () {
             console.log('Button clicked! Redirecting to services.html...');
-
             window.location.href = './pages/Services.html';
         });
     } else {
-        console.error('Button with class "button4" not found.');
+        console.error('Button with ID "FSbutton" not found.');
     }
 });
 
-
-
 // ---- select  ----
-
-
 const selectElement = document.querySelector('.Select');
 const cards = document.querySelectorAll('.ConsultationCards > div');
 
@@ -174,26 +162,26 @@ function updateCards() {
     cards.forEach(card => {
         if (selectedOption === 'All Services') {
             card.style.display = 'block';
-        }
-        else if (selectedOption === 'Personal Growth') {
+        } else if (selectedOption === 'Personal Growth') {
             card.style.display = (Array.from(cards).indexOf(card) < 3) ? 'block' : 'none';
-        }
-        else if (selectedOption === 'Career Ambitions') {
+        } else if (selectedOption === 'Career Ambitions') {
             card.style.display = (Array.from(cards).indexOf(card) >= 3) ? 'block' : 'none';
         }
     });
 }
 
-const serviceOptions = selectElement.querySelectorAll('h4');
-serviceOptions.forEach(option => {
-    option.addEventListener('click', function () {
-        serviceOptions.forEach(opt => opt.classList.remove('selected'));
-        option.classList.add('selected');
-        updateCards();
+if (selectElement) {
+    const serviceOptions = selectElement.querySelectorAll('h4');
+    serviceOptions.forEach(option => {
+        option.addEventListener('click', function () {
+            serviceOptions.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+            updateCards();
+        });
     });
-});
 
-updateCards();
+    updateCards();
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('nav ul li a');
@@ -207,42 +195,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 window.location.href = targetUrl;
-            }, 900);
+            }, 300);
         });
     });
 });
 
-// burger-Nav///
-// Toggle the burger menu visibility on click
-document.addEventListener('DOMContentLoaded', function() {
-    // Toggle the burger menu visibility on click
-    const burger = document.querySelector('.burger');
-    const navLinks = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const button4 = document.getElementById('button4');
+    const burger = document.getElementById('burger');
+    const navLinksContainer = document.querySelector('.nav-links');
+    const LogIn = document.querySelector('.log-in');
+    
+    // Scroll Up functionality
+    const scrollUp = document.querySelector('.ScrollUp');
 
-    if (burger && navLinks) {
-        burger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-    } else {
-        console.error("Burger menu or nav-links not found");
+    function handleScroll() {
+        if (window.scrollY > 600 && window.innerWidth <= 1024) {
+            scrollUp.style.display = 'flex';
+        } else {
+            scrollUp.style.display = 'none';
+        }
     }
 
-    // Highlight the active link based on the current URL
-    const currentPath = window.location.pathname;
-    document.querySelectorAll('nav ul li a').forEach(link => {
-        if (link.href.includes(currentPath)) {
-            link.classList.add('active');
-        }
+    scrollUp.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Example underline effect based on the active link
-    // const underline = document.querySelector('.underline');
-    // const activeLink = document.querySelector('a.active');
-    // if (underline && activeLink) {
-    //     const rect = activeLink.getBoundingClientRect();
-    //     underline.style.width = `${rect.width}px`;
-    //     underline.style.left = `${rect.left}px`;
-    // } else {
-    //     console.error("Underline or active link not found");
-    // }
+    // Burger icon functionality
+    burger.addEventListener('click', () => {
+        navLinksContainer.classList.toggle('active');
+        burger.classList.toggle('toggle');
+        updateButtonVisibility();
+    });
+
+    window.addEventListener('resize', updateButtonVisibility);
+
+    // Initial setup
+    updateButtonVisibility();
+    handleScroll();
+
+    function updateButtonVisibility() {
+        if (window.innerWidth > 768) {
+            LogIn.style.display = 'block';
+        } else if (navLinksContainer.classList.contains('active')) {
+            LogIn.style.display = 'block';
+        } else {
+            LogIn.style.display = 'none';
+        }
+    }
+
+    // Event listeners for navigation links to enable smooth transitions
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetUrl = this.getAttribute('href');
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 300);
+        });
+    });
+
+    window.addEventListener('scroll', handleScroll);
 });
+

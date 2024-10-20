@@ -1,164 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Coach Success</title>
-        <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Success</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-    <body>
-        <div class="main-container">
-            <header>
-                <nav>
-                    <div class="logo">
-                        <a href="/index.html">
-                            <h2>ALLAN JOHNSON</h2>
-                            <h4>Personal Life Coach</h4>
-                        </a>
-                    </div>
-                    <ul class="nav-links">
-                        <li><a href="#SecondSection">About</a></li>
-                        <li><a href="./pages/Services.html">Services</a></li>
-                        <li><a href="./pages/Plans.html">Plans</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Guides</a></li>
-                        <li><a href="#Contact">Contact</a></li>
-                    </ul>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/index.html">
+                    <h2>ALLAN JOHNSON</h2>
+                    <h4>Personal Life Coach</h4>
+                </a>
+            </div>
+             <div id="burger" class="burger"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="#SecondSection">About</a></li>
+                <li><a href="./pages/Services.html">Services</a></li>
+                <li><a href="./pages/Plans.html">Plans</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Guides</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <li class="LogInFlex">
                     <div class="log-in">
-                        <div>
-                            <i class="fa-solid fa-circle-user"></i>
-                        </div>
+                        <i class="fa-solid fa-circle-user"></i>
                         <h4><a href="">Log in</a></h4>
                     </div>
-                    <div class="burger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </nav>
-            </header>
-            
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-container">
 
-            <div class="FirstSection">
-                <div class="background-img">
-                    <div class="absolute">
-                        <h4>AMBITION IS THE BEST FIRST STEP TOWARDS </h4>
-                        <h1>SUCCESS</h1>
-                        <h3>Now Available for Online Coaching</h3>
-                        <button id="FSbutton" >Book Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Second Section -->
-            <div id="SecondSection" class="SecondSection">
-                <div class="LeftFloat">
-                    <h2>ABOUT ME</h2>
-                    <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text”
-                        or
-                        double click me to add your own content and make changes to the font. Feel free to drag and drop
-                        me
-                        anywhere you like on your page. ​<br><br> This is a great space to write long text about your
-                        company
-                        and your services. You can use this space to go into a little more detail about your company.
-                        Talk
-                        about your team and what services you provide.</p>
-                    <div class="buttons">
-                        <button class="FirstButt">Read More</button>
-                        <button class="SecButt">Free Consultation</button>
-                    </div>
-                </div>
-                <div class="floatright">
-                    <!-- <img src="./Images/person2.jpg" srcset="medium.jpg 768w, large.jpg 1024w" sizes="(max-width: 768px) 100vw, 50vw" alt="Responsive Image"> -->
-                        <img class="personImg" src="./Images/person2.jpg" alt="">
-                    <!-- <div class="personImg"></div> -->
-                </div>
-            </div>
-
-            <!-- Third Section -->
-            <div class="ThirdSection">
-                <h2>HOW CAN I HELP YOU</h2>
-                <div class="Cards">
-                    <div class="FirstCard">
-                        <h3>FREE <br> CONSULTATION</h3>
-                        <h5> this area to describe one of <br> your services.</h5>
-                        <p>45 min</p>
-                        <button class="CardButton1">Book It</button>
-                    </div>
-                    <div class="SecondCard">
-                        <h3>ONLINE <br> COACHING</h3>
-                        <h5>Use this area to describe one of <br> your services.</h5>
-                        <p>1hr <br>$70</p>
-                        <button class="CardButton2">Book It</button>
-                    </div>
-                    <div class="ThirdCard">
-                        <h3>SELF- <br>IMPROVEMENT <br> WORKSHOP</h3>
-                        <h5> this area to describe one of <br> your services.</h5>
-                        <p class="">Mon, Tue, Wed, Thu, Fri <br>1 hr <br>$90</p>
-                        <button class="CardButton3">Book It</button>
-                    </div>
-                </div>
-                <div class="button4Flex">
-                    <button class="button4" id="button4">More Services</button>
-                </div>
-            </div>
-            <footer id="Contact">
-                <div class="LeftFooter">
-                    <h2>CONTACT</h2>
-                    <div class="contactStuff">
-                        <p>500 Terry Francine Street, <br>San Francisco, CA 94158</p>
-                        <p>Tel: 123-456-7890 <br>Fax: 123-456-7890</p>
-                        <p>vako.narimanidze5@gmail.com</p>
-                    </div>
-                    <div class="Links">
-                        <a target="_blank" class="FirstLink" href="https://www.facebook.com/"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" href="https://x.com/home"><i class="fab fa-twitter"></i></a>
-                        <a target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-                        <a target="_blank" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <h6>© 2035 by Personal Life Coach. <br> Powered by <a target="_blank"
-                            href="https://github.com/VakoNarimanidze">Vako
-                            Narimanidze</a>
-                    </h6>
-                </div>
-
-                <div class="RightFooter">
-                    <div class="inline">
-                        <div class="field-group">
-                            <label for="firstName">First Name*</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                        </div>
-                        <div class="field-group">
-                            <label for="lastName">Last Name*</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                        </div>
-                    </div>
-
-                    <label for="email">Email*</label>
-
-                    <input type="email" id="email" name="email" required>
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message"></textarea>
-                    <div class="buttonFlex">
-                        <button>Submit</button>
-                    </div>
-                </div>
-            </footer>
-
+        <div class="FullResChatIcon">
+            <i class="fas fa-comment-dots"></i>
+            <h4>Let's Chat!</h4>
         </div>
 
-        <script src="script.js"></script>
-    </body>
+        <div class="PhoneResChatIcon">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+
+        <div class="ScrollUp">
+            <i class="fas fa-angle-up"></i>
+        </div>
+
+
+        <div class="FirstSection">
+            <div class="background-img">
+                <div class="absolute">
+                    <h4>AMBITION IS THE BEST FIRST STEP TOWARDS </h4>
+                    <h1>SUCCESS</h1>
+                    <h3>Now Available for Online Coaching</h3>
+                    <button id="FSbutton">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Section -->
+        <div id="SecondSection" class="SecondSection">
+            <div class="LeftFloat">
+                <h2>ABOUT ME</h2>
+                <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text”
+                    or
+                    double click me to add your own content and make changes to the font. Feel free to drag and drop
+                    me
+                    anywhere you like on your page. ​<br><br> This is a great space to write long text about your
+                    company
+                    and your services. You can use this space to go into a little more detail about your company.
+                    Talk
+                    about your team and what services you provide.</p>
+                <div class="buttons">
+                    <button class="FirstButt">Read More</button>
+                    <button class="SecButt">Free Consultation</button>
+                </div>
+            </div>
+            <div class="floatright">
+                <!-- <img src="./Images/person2.jpg" srcset="medium.jpg 768w, large.jpg 1024w" sizes="(max-width: 768px) 100vw, 50vw" alt="Responsive Image"> -->
+                <img class="personImg" src="./Images/person2.jpg" alt="">
+                <!-- <div class="personImg"></div> -->
+            </div>
+        </div>
+
+        <!-- Third Section -->
+        <div class="ThirdSection">
+            <h2>HOW CAN I HELP YOU</h2>
+            <div class="Cards">
+                <div class="FirstCard">
+                    <h3>FREE <br> CONSULTATION</h3>
+                    <h5> this area to describe one of <br> your services.</h5>
+                    <p>45 min</p>
+                    <button class="CardButton1">Book It</button>
+                </div>
+                <div class="SecondCard">
+                    <h3>ONLINE <br> COACHING</h3>
+                    <h5>Use this area to describe one of <br> your services.</h5>
+                    <p>1hr <br>$70</p>
+                    <button class="CardButton2">Book It</button>
+                </div>
+                <div class="ThirdCard">
+                    <h3>SELF- <br>IMPROVEMENT <br> WORKSHOP</h3>
+                    <h5> this area to describe one of <br> your services.</h5>
+                    <p class="">Mon, Tue, Wed, Thu, Fri <br>1 hr <br>$90</p>
+                    <button class="CardButton3">Book It</button>
+                </div>
+            </div>
+            <div class="button4Flex">
+                <button class="button4" id="button4">More Services</button>
+            </div>
+        </div>
+        <footer id="Contact">
+            <div class="LeftFooter">
+                <h2>CONTACT</h2>
+                <div class="contactStuff">
+                    <p>500 Terry Francine Street, <br>San Francisco, CA 94158</p>
+                    <p>Tel: 123-456-7890 <br>Fax: 123-456-7890</p>
+                    <p>vako.narimanidze5@gmail.com</p>
+                </div>
+                <div class="Links">
+                    <a target="_blank" class="FirstLink" href="https://www.facebook.com/"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a target="_blank" href="https://x.com/home"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                </div>
+                <h6>© 2035 by Personal Life Coach. <br> Powered by <a target="_blank"
+                        href="https://github.com/VakoNarimanidze">Vako
+                        Narimanidze</a>
+                </h6>
+            </div>
+
+            <div class="RightFooter">
+                <div class="inline">
+                    <div class="field-group">
+                        <label for="firstName">First Name*</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="field-group">
+                        <label for="lastName">Last Name*</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <label for="email">Email*</label>
+
+                <input type="email" id="email" name="email" required>
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject">
+                <label for="message">Message</label>
+                <textarea name="message" id="message"></textarea>
+                <div class="buttonFlex">
+                    <button>Submit</button>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
 
 </html>
