@@ -695,35 +695,49 @@ section h2::before {
     margin-top: 50px;
 }
 /* Service Selection Dropdown */
-.Select {
+.SelectService {
+    display: none;
     position: relative;
+    width: 100%;
+}
+
+.selected-service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
     cursor: pointer;
 }
 
-.dropdown {
-    display: none; /* Hide dropdown initially */
+.selected-service .fas {
+    transition: transform 0.3s ease;
+}
+
+.selected-service.active .fas {
+    transform: rotate(180deg);
+}
+
+.dropdown-options {
+    display: none;
+    flex-direction: column;
     position: absolute;
+    width: 100%;
     top: 100%;
-    left: 0;
-    background: white; /* Change as needed */
-    border: 1px solid #ccc; /* Change as needed */
-    z-index: 1000; /* Ensure it appears above other content */
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
 }
 
-.dropdown-option {
+.dropdown-options .dropdown-option {
     padding: 10px;
-    border-bottom: 1px solid #ccc; /* Change as needed */
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
 }
 
-.dropdown-option:hover {
-    background-color: #f0f0f0; /* Change as needed */
-}
-
-.arrow-down {
-    position: absolute;
-    right: 10px; /* Adjust position as needed */
-    top: 50%;
-    transform: translateY(-50%);
+.dropdown-options .dropdown-option:hover {
+    background-color: #f9f9f9;
 }
 
 
@@ -889,9 +903,6 @@ section h2::before {
 
 /* Make the layout responsive */
 
-/* @media (max-width:133px){
-    .SecondSection
-} */
 /* Media Query for 1264px (Tablet Landscape) */
 
 @media (max-width:1264px){
@@ -1007,15 +1018,7 @@ section h2::before {
         width: 50%;
     }
     /* services */
-    .SelectService {
-        display: block;
-    }
-    .Select{
-        display: none;
-    }
-    .Services-Section h2{
-        margin-left: 20px;
-    }
+   
     /* plans */
     .PlansBoxFlex {
         flex-wrap: wrap;
@@ -1066,6 +1069,34 @@ section h2::before {
         width: 90%; 
         grid-template-columns: 1fr; 
     }
+    /* services */
+
+    .SelectService {
+        display: block;
+    }
+    .Select{
+        display: none;
+    }
+    .main-container{
+        min-height: 100vh;
+    }
+    .Services-Section{
+        min-height: 1200px;
+    }
+    .Services-Section h2{
+        margin-left: 20px;
+    }
+    .ConsultationCards{
+        width: 100%;
+        padding-inline: 0;
+    }
+    .ConsultationCards div p{
+        padding-bottom: 10px;
+    }
+    .ConsultationCards button{
+        margin-top: 10px;
+    }       
+    /* plans */
     .PlansBoxFlex {
         flex-direction: column;
         align-items: center; 
@@ -1109,7 +1140,12 @@ section h2::before {
         width: 100%;
     }
 }
-
+/* media query for 650px (Mobile) */
+ @media (max-width: 650px){
+    .Services-Section{
+        height: 1900px;
+    }
+ }
 /* Media Query for 480px (Mobile) */
 @media (max-width: 480px) {
     .logo {
