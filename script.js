@@ -236,13 +236,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Example underline effect based on the active link
-    const underline = document.querySelector('.underline');
-    const activeLink = document.querySelector('a.active');
-    if (underline && activeLink) {
-        const rect = activeLink.getBoundingClientRect();
-        underline.style.width = `${rect.width}px`;
-        underline.style.left = `${rect.left}px`;
-    } else {
-        console.error("Underline or active link not found");
-    }
+    // const underline = document.querySelector('.underline');
+    // const activeLink = document.querySelector('a.active');
+    // if (underline && activeLink) {
+    //     const rect = activeLink.getBoundingClientRect();
+    //     underline.style.width = `${rect.width}px`;
+    //     underline.style.left = `${rect.left}px`;
+    // } else {
+    //     console.error("Underline or active link not found");
+    // }
 });
