@@ -444,7 +444,6 @@ footer {
     display: flex;
     padding: 20px;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .inline .field-group {
@@ -695,6 +694,38 @@ section h2::before {
     cursor: pointer;
     margin-top: 50px;
 }
+/* Service Selection Dropdown */
+.Select {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none; /* Hide dropdown initially */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white; /* Change as needed */
+    border: 1px solid #ccc; /* Change as needed */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.dropdown-option {
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Change as needed */
+}
+
+.dropdown-option:hover {
+    background-color: #f0f0f0; /* Change as needed */
+}
+
+.arrow-down {
+    position: absolute;
+    right: 10px; /* Adjust position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 
 
 /* ------ Plans Page------------ */
@@ -960,26 +991,38 @@ section h2::before {
         width: 80%; 
         grid-template-columns: repeat(2, 1fr); 
     }
-    .PlansBoxFlex {
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    .PlansCard {
-        max-width: 250px; 
-    }
     footer{
         display: flex;
     }
     .RightFooter{
         margin: 0px 0px;
         padding-top: 20px;
+        width: 50%;
     }
     .RightFooter .inline{
         display: block;
     }
     .LeftFooter{
         margin-left: 0;
-        width: 100%;
+        width: 50%;
+    }
+    /* services */
+    .SelectService {
+        display: block;
+    }
+    .Select{
+        display: none;
+    }
+    .Services-Section h2{
+        margin-left: 20px;
+    }
+    /* plans */
+    .PlansBoxFlex {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .PlansCard {
+        max-width: 250px; 
     }
 }
 
@@ -1031,7 +1074,7 @@ section h2::before {
         max-width: 220px; 
     }
 }
-
+/* media 668px */
 @media (max-width: 668px) {
     .main-container{
         max-width: 668px;
@@ -1052,17 +1095,25 @@ section h2::before {
        margin-top: 10px;
        margin-bottom: 20px;
     }
+    footer{
+        flex-wrap: wrap;
+    }
+    .RightFooter{
+        width: 100%;
+    }
+    .LeftFooter{
+        width: 100%;
+    }
+
+    .buttonFlex button{
+        width: 100%;
+    }
 }
 
 /* Media Query for 480px (Mobile) */
 @media (max-width: 480px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding-top: 10px; 
-    }
     .logo {
-        padding-left: 0px;
+        padding-left: 10px;
     }
     .log-in {
         padding-right: 0px;
@@ -1070,9 +1121,15 @@ section h2::before {
     .FirstSection h1 {
         font-size: 50px;
     }
+    .LeftFloat p{
+        width: 320px;
+    }
     .personImg {
         width: 100%;
         height: 400px; 
+    }
+    .ThirdSection h2{
+        margin-left: 15px;
     }
     .LeftFloat {
         padding-left: 10px;
@@ -1082,6 +1139,28 @@ section h2::before {
         width: 100%; 
         grid-template-columns: 1fr; 
     }
+    /* services */
+    .main-container{
+        min-height: 100vh;
+    }
+    .Services-Section{
+        min-height: 1900px;
+    }
+    .Services-Section h2{
+        margin-left: 20px;
+    }
+    .ConsultationCards{
+        width: 100%;
+        padding-inline: 0;
+    }
+    .ConsultationCards div p{
+        padding-bottom: 10px;
+    }
+    .ConsultationCards button{
+        margin-top: 10px;
+    }
+
+    /* plans */
     .PlansBoxFlex {
         flex-direction: column;
         align-items: center;

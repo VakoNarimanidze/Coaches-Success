@@ -260,3 +260,57 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', handleScroll);
 });
 
+// services selection option2//
+document.addEventListener('DOMContentLoaded', function () {
+    const selectElement = document.querySelector('.Select');
+    const dropdown = selectElement.querySelector('.dropdown-options'); // Ensure this targets the right element
+    const dropdownOptions = dropdown.querySelectorAll('.dropdown-option');
+    const cards = document.querySelectorAll('.ConsultationCards > div');
+    const arrowIcon = selectElement.querySelector('.fa-angle-down'); // Target the arrow icon
+
+    // Function to update the cards based on selected service
+    function updateCards(serviceType) {
+        cards.forEach(card => {
+            if (serviceType === 'all') {
+                card.style.display = 'block';
+            } else if (serviceType === 'personal') {
+                card.style.display = (
+                    card.classList.contains('Free-Consultation') ||
+                    card.classList.contains('Online-Coaching') ||
+                    card.classList.contains('Self-Improvement-Workshop')
+                ) ? 'block' : 'none';
+            } else if (serviceType === 'career') {
+                card.style.display = (
+                    card.classList.contains('Corporate-Life') ||
+                    card.classList.contains('Career-Coaching') ||
+                    card.classList.contains('Group-Coaching')
+                ) ? 'block' : 'none';
+            }
+        });
+    }
+
+    // Toggle dropdown visibility when clicking the arrow
+    arrowIcon.addEventListener('click', function () {
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Handle option selection
+    dropdownOptions.forEach(option => {
+        option.addEventListener('click', function () {
+            dropdownOptions.forEach(opt => opt.classList.remove('selected')); // Remove selected class from all options
+            this.classList.add('selected'); // Add selected class to clicked option
+
+            const serviceType = this.getAttribute('data-service');
+            updateCards(serviceType); // Update the cards based on selected service
+            selectElement.querySelector('.service-label').innerText = this.innerText; // Update the displayed selected service text
+            dropdown.style.display = 'none'; // Hide dropdown after selection
+        });
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener('click', function (e) {
+        if (!selectElement.contains(e.target)) {
+            dropdown.style.display = 'none'; // Close dropdown if the click was outside
+        }
+    });
+});
