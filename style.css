@@ -1759,9 +1759,9 @@ section h2::before {
     }
 }
 
-/* media query for 393px (iPhone 15 Pro) */
+/* media query for 414px */
 
-@media(max-width: 394px){
+@media(max-width: 415px){
     /* Blog */
     .BlogCardRightSide{
         padding-inline: 20px;
