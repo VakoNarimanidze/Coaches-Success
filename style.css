@@ -1768,6 +1768,9 @@ section h2::before {
         width: 80%;
         margin-right: 100px;
     }
+    .Blog h2{
+        margin-left: 5px;
+    }
 
   
  
