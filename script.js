@@ -386,3 +386,41 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// Select All Functionality
+document.getElementById('select-all').addEventListener('change', function() {
+    const checkboxes = document.querySelectorAll('.file-checkbox');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = this.checked;
+    });
+});
+
+// Toggle Star Icon Color
+document.querySelectorAll('.favorite-icon').forEach(star => {
+    star.addEventListener('click', function() {
+        if (this.classList.contains('far')) {
+            this.classList.remove('far');
+            this.classList.add('fas');
+        } else {
+            this.classList.remove('fas');
+            this.classList.add('far');
+        }
+    });
+});
+document.getElementById('sort-arrow-up').addEventListener('click', toggleSortMenu);
+document.getElementById('sort-arrow-down').addEventListener('click', toggleSortMenu);
+
+function toggleSortMenu() {
+  const menu = document.getElementById('sort-menu');
+  if (menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden');
+  } else {
+    menu.classList.add('hidden');
+  }
+}
+
+// Sorting function placeholder (implement sorting logic)
+function sortBy(criteria) {
+  console.log('Sorting by:', criteria);
+  // Implement the actual sorting functionality here
+}
