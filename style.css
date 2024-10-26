@@ -1218,13 +1218,17 @@ section h2::before {
     100% { transform: scale(1); }
 }
 /* ---------Guides---------- */
-
+.Guides{
+    height: 1000px;
+}
 
 
 .table-container {
   max-width: 1200px;
   margin: 20px auto;
   padding: 10px;
+  padding-bottom: 120px;
+  font-family: "Raleway", sans-serif;
 }
 
 .table-header {
@@ -1235,28 +1239,45 @@ section h2::before {
 }
 
 .title {
-  font-size: 24px;
+  font-size: 13px;
   font-weight: bold;
+  position: relative;
+  font-weight: 500;
+  top: -40px;
+  padding-left: 10px;
+}
+.guides-p{
+    padding-left: 295px;
+    width: 810px;
+    line-height: 1.5em;
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding-bottom: 30px;
+}
+.Guides h2::before{
+    margin-bottom: 40px;
 }
 
 .search-bar {
   position: relative;
   width: 50%;
+  padding-top: 100px;
 }
 
 .search-bar input {
   width: 100%;
   padding: 8px 35px 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid black;
 }
 
 .search-bar i {
   position: absolute;
-  right: 10px;
-  top: 50%;
+  left: 10px;
+  top: 87.5%;
   transform: translateY(-50%);
-  color: #888;
+  color: black;
 }
 
 .table-options {
@@ -1295,53 +1316,76 @@ section h2::before {
 .file-table th, .file-table td {
   padding: 12px;
   text-align: left;
+  font-weight: 400;
+  font-size: 13px;
   
+}
+.itemNameTH h3{
+    font-family: "Raleway", sans-serif !important;
+    font-size: 17px;
+    font-weight: 400;
 }
 .file-table td{
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
-
-
-.file-table th input[type="checkbox"] {
-  margin: 0;
+.item-name,.last-updated,.views,.favorites{
+    transition: 0.4s;
+    cursor: pointer;
+}
+.item-name:hover,.last-updated:hover,.views:hover,.favorites:hover{
+    color: #317F81;
+}
+.last-updated span i{
+    padding-left: 5px;
+}
+tbody tr{
+    height: 110px;
 }
 
-.file-table th input[type="checkbox"], .file-table td input[type="checkbox"]{
-    width: 15px;
-    height: 15px;
-    border-radius: none;
+
+/* Hide the native checkbox */
+.file-table th input[type="checkbox"],
+.file-table td input[type="checkbox"] {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 17px; 
+    height: 17px;
+    background-color: transparent;
+    border: 1px solid black; 
+    cursor: pointer;
+    position: relative;
 }
+
+/* Style the checkbox when it’s checked */
+.file-table th input[type="checkbox"]:checked,
+.file-table td input[type="checkbox"]:checked {
+    background-color: white;
+    border-color: #317F81;
+}
+
+/* Adding a checkmark icon when checked */
+.file-table th input[type="checkbox"]:checked::before,
+.file-table td input[type="checkbox"]:checked::before {
+    content: "✔"; 
+    color: #317F81;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 tbody tr:last-child{
     margin-bottom: 200px;
 }
 tbody tr:hover{
   background-color: #f9f9f9;
 }
-.title {
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 0;
-}
 
-.search-bar {
-    position: relative;
-    width: 50%;
-}
 
-.search-bar input {
-    width: 100%;
-    padding: 8px 35px 8px 10px;
-    border: 1px solid #ccc;
-}
 
-.search-bar i {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #000;
-}
 .search-bar input::placeholder{
     padding-left: 20px;
 }
