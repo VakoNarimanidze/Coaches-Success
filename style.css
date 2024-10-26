@@ -1733,9 +1733,7 @@ tbody{
         width: 90%;
         grid-template-columns: 1fr;
     }
-    /* .ThirdSection h2{
-        text-align: left;
-    } */
+    
 
     /* services */
 
@@ -1784,7 +1782,7 @@ tbody{
 
     .plansBenefits {
         display: none;
-        /* Hide the benefits */
+        border-top: 1px solid black;
     }
 
     /* Arrow button styling */

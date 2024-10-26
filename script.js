@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Scroll Up functionality
     function handleScroll() {
         if (scrollUp) {
-            if (window.scrollY > 300 && window.innerWidth <= 1024) {
+            if (window.scrollY > 500 && window.innerWidth <= 1024) {
                 scrollUp.style.display = 'flex';
             } else {
                 scrollUp.style.display = 'none';
@@ -218,55 +218,85 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Dropdown or arrow icon not found.');
     }
 
-    // Plans card dropdown functionality
-    const plansCards = document.querySelectorAll(".PlansCard");
-    const toggleIcons = document.querySelectorAll(".toggle-benefits");
+  // Plans card dropdown functionality
+const plansCards = document.querySelectorAll(".PlansCard");
+const toggleIcons = document.querySelectorAll(".toggle-benefits");
 
+// Function to reorder the plans cards based on screen size
+function reorderPlansCards() {
+    const plansBoxFlex = document.querySelector('.PlansBoxFlex');
+
+    if (window.innerWidth <= 768) {
+        // Move the second card to the first position
+        if (plansBoxFlex && plansCards.length >= 2) {
+            plansBoxFlex.insertBefore(plansCards[1], plansCards[0]);
+        }
+    } else {
+        // Ensure the cards are in the original order when above 768px
+        if (plansBoxFlex && plansCards.length >= 3) {
+            // Move the cards back to their original positions
+            plansBoxFlex.appendChild(plansCards[0]); // First card
+            plansBoxFlex.appendChild(plansCards[1]); // Second card
+            plansBoxFlex.appendChild(plansCards[2]); // Third card
+        }
+    }
+}
+
+// Set initial display for plans benefits based on window width
+plansCards.forEach(card => {
+    const benefits = card.querySelector(".plansBenefits");
+
+    // Set display flex by default for larger screens
+    if (window.innerWidth > 768) {
+        benefits.style.display = "flex"; // Visible above 768px
+    } else {
+        benefits.style.display = "none"; // Hidden below 768px
+    }
+});
+
+// Toggle benefits visibility when clicking the icons
+toggleIcons.forEach((icon, index) => {
+    icon.addEventListener("click", function() {
+        const benefits = plansCards[index].querySelector(".plansBenefits");
+        const hrElement = plansCards[index].querySelector("hr");
+
+        if (window.innerWidth <= 768) {
+            const isVisible = getComputedStyle(benefits).display === "flex";
+
+            if (!isVisible) {
+                benefits.style.display = "flex"; 
+                hrElement.style.display = "none"; 
+                icon.classList.remove("fa-chevron-down");
+                icon.classList.add("fa-chevron-up"); 
+            } else {
+                benefits.style.display = "none"; 
+                hrElement.style.display = "flex"; 
+                icon.classList.remove("fa-chevron-up");
+                icon.classList.add("fa-chevron-down"); 
+            }
+        }
+    });
+});
+
+// Initial check for layout and dropdown display
+reorderPlansCards();
+
+// Check on window resize
+window.addEventListener("resize", function() {
+    reorderPlansCards();
     plansCards.forEach(card => {
         const benefits = card.querySelector(".plansBenefits");
-
-        // Set initial display based on window width
-        if (window.innerWidth >= 768) {
-            benefits.style.display = "block"; // Visible above 768px
+        if (window.innerWidth > 768) {
+            benefits.style.display = "flex"; // Visible above 768px
         } else {
             benefits.style.display = "none"; // Hidden below 768px
         }
     });
+});
 
-    toggleIcons.forEach((icon, index) => {
-        icon.addEventListener("click", function() {
-            const benefits = plansCards[index].querySelector(".plansBenefits");
-            const hrElement = plansCards[index].querySelector("hr");
+// Call the function on initial load
+reorderPlansCards();
 
-            if (window.innerWidth < 768) {
-                const isVisible = getComputedStyle(benefits).display === "flex";
-
-                if (!isVisible) {
-                    benefits.style.display = "flex"; 
-                    hrElement.style.display = "none"; 
-                    icon.classList.remove("fa-chevron-down");
-                    icon.classList.add("fa-chevron-up"); 
-                } else {
-                    benefits.style.display = "none"; 
-                    hrElement.style.display = "flex"; 
-                    icon.classList.remove("fa-chevron-up");
-                    icon.classList.add("fa-chevron-down"); 
-                }
-            }
-        });
-    });
-
-    // Optional: Add a listener to update display on resize
-    window.addEventListener("resize", function() {
-        plansCards.forEach(card => {
-            const benefits = card.querySelector(".plansBenefits");
-            if (window.innerWidth >= 768) {
-                benefits.style.display = "flex"; // Always visible above 768px
-            } else {
-                benefits.style.display = "none"; // Hidden below 768px
-            }
-        });
-    });
 });
 
 // Blog functionality//
