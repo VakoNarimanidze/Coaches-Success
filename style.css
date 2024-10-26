@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -21,6 +23,7 @@ body.fade-out {
     max-width: 1440px;
     margin: 0 auto;
     overflow: hidden;
+    transition: 1s ease;
 }
 
 header {
@@ -34,8 +37,10 @@ header {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:baseline;
     padding-top: 30px;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
 }
 
 nav ul {
@@ -47,6 +52,7 @@ nav ul li {
     list-style: none;
     display: inline-block;
     padding-left: 32px;
+    font-size: 14px;
 }
 
 nav ul li a:hover {
@@ -63,7 +69,7 @@ nav ul li a {
     padding-left: 330px;
     padding-top: 10px;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 2px;   
 }
 
 .logo a {
@@ -82,10 +88,11 @@ nav ul li a {
 .logo h4 {
     font-weight: 400;
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
 .LogInFlex div {
-    padding-right: 105px;
+    padding-right: 205px;
     display: flex;
     align-items: center;
 }
@@ -132,6 +139,9 @@ nav ul li a {
     height: 2px;
     background-color: #000;
     width: 100%;
+    display: none;
+}
+nav hr{
     display: none;
 }
 
@@ -186,17 +196,40 @@ nav ul li a {
 
 /* First Section */
 .FirstSection {
+    position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url("./Images/MainPageBG.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+    overflow: hidden;
 }
 
+/* Video Background */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
 
-.absolute h4 {
+#bg-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; /* Keep it behind content */
+}
+
+/* Content styling on top of the video */
+.content {
+    position: relative;
+    z-index: 9; /* Keep content above the background */
+    text-align: center;
+    color: black;
+    padding: 20px;
+}
+
+.content h4 {
     font-size: 17px;
     line-height: 1.4em;
     margin-bottom: 34px;
@@ -204,7 +237,7 @@ nav ul li a {
     letter-spacing: 1px;
 }
 
-.absolute h1 {
+.content h1 {
     font-size: 110px;
     letter-spacing: 10px;
     line-height: 1em;
@@ -212,13 +245,8 @@ nav ul li a {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.absolute {
-    line-height: normal;
-    text-align: center;
-    font-size: 23px;
-}
 
-.absolute button {
+.content button {
     width: 125px;
     height: 40px;
     background-color: black;
@@ -230,11 +258,10 @@ nav ul li a {
     font-size: 15px;
 }
 
-.absolute button:hover {
+.content button:hover {
     background-color: white;
     color: black;
 }
-
 
 
 
@@ -255,7 +282,7 @@ nav ul li a {
 
 .LeftFloat {
     width: 50%;
-    padding-left: 290px;
+    padding-left: 150px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -327,7 +354,7 @@ nav ul li a {
 .ThirdSection,
 .BG-Img {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-image: url("./Images/BG-img.webp");
     background-position: center;
     background-attachment: fixed;
@@ -435,7 +462,7 @@ nav ul li a {
     background-color: black;
     color: white;
     border: none;
-    margin-top: 30px;
+    margin: 30px 0;
     cursor: pointer;
     transition: 0.5s ease;
 }
@@ -589,12 +616,88 @@ footer button:hover {
     border: 1px solid black;
     cursor: pointer;
 }
+/* About Me styles */
 
-/* ---- Services Styles ---- */
-
-.BG-Img {
-    height: 1000px;
+.AboutMe-BG{
+    background-image: url(./Images/AboutMe-BG.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 600px;
+    background-position-y:center;
 }
+.AboutMe-BG h2{
+    margin-left: 400px;
+    width: 200px;
+}
+
+.AboutMe-Relative{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.AboutMe-Relative h4{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    letter-spacing: 0.1em;
+}
+.AboutMe-Relative p{
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+}
+.AboutMe-Relative img{
+    border: 10px solid white;
+    width: 25%;
+    position: absolute;
+    top: -180px;
+    right:180px;
+    z-index: 10;
+}
+.AboutMe-Content{
+    margin-left: 220px;
+}
+.AboutMe-Content h4{  
+   margin-top: 100px;
+}
+.AboutMe-Content p{
+    margin-top: 30px;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+}
+.AboutMe-Content .First-P{
+    width: 500px;
+}
+.AboutMe-Content .Second-P{
+    width: 930px;
+}
+.AboutMe-Content .Third-P{
+    width: 910px;
+}
+.AboutMeFlex{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: 100px;
+}
+.AboutMeFlex div:first-child{
+    margin-right: 90px;
+}
+.AboutMeFlex h4{
+    margin: 30px 0;
+}
+
+.AboutMeFlex span:nth-child(odd) {
+    display: inline;
+    font-size: 25px;
+    vertical-align: middle;
+}
+/* ---- Services Styles ---- */
 
 section h2 {
     font-size: 52px;
@@ -1117,9 +1220,6 @@ section h2::before {
 /* ---------Guides---------- */
 
 
-body {
-  font-family: Arial, sans-serif;
-}
 
 .table-container {
   max-width: 1200px;
@@ -1245,7 +1345,6 @@ body {
     padding-left: 20px;
 }
 
-/* Updated Table Options Layout */
 .table-container{
     background-color: white;
 }
@@ -1263,7 +1362,7 @@ tbody{
 
 /* Style for Favorite icon */
 .favorite-icon {
-    color: #317F81; /* Initially green */
+    color: #317F81;
     cursor: pointer;
 }
 .favorite-icon i.far {
@@ -1301,28 +1400,41 @@ tbody{
 
 /* Make the layout responsive */
 
-/* Media Query for 1264px (Tablet Landscape) */
+/* Media Query for 1283px (Tablet Landscape) */
 
-@media (max-width:1264px) {
+@media (max-width:1284px) {
+    .main-container{
+        width: 100%;
+    }
     .RightFooter {
         margin: 0 auto;
     }
 
     .inline input {
-        width: 100%;
+        width: 97%;
+        margin-left: 5px;
+    }
+    .ThirdSection{
+        height: auto;
+    }
+    .ThirdSection .button4{
+        margin-bottom: 30px;
+    }
+
+}
+
+@media (max-width:1200px) {
+    .FullResChatIcon{
+        right: 100px;
+    }
+    .AboutMe-Content {
+        margin-left: 110px;
+    }
+    .AboutMe-BG h2{
+        margin-left: 200px;
     }
 }
 
-
-
-/* Media Query for 1139px (Tablet Landscape) */
-
-@media (max-width:1139px) {
-    .Services-Section {
-        height: 1300px;
-        padding-inline: 30px;
-    }
-}
 
 
 /* Media Query for 1024px (Tablet Landscape) */
@@ -1345,9 +1457,10 @@ tbody{
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 80px;
+        top: 110px;
         left: 0;
         width: 100%;
+        height: 100vh;
         background-color: white;
         padding: 20px 0;
         text-align: center;
@@ -1361,9 +1474,30 @@ tbody{
     .nav-links li {
         padding: 15px 0;
     }
+  
+    nav hr{
+        display: block;
+        align-self: center;
+        height: 1px;
+        width: 100px;
+        background: black;
+        border: none;
+    }
 
     .log-in {
         display: none;
+    }
+    .LogInFlex{
+        display: flex;
+    }
+    .LogInFlex div{
+        padding-right: 0;
+        display: inline-block;
+        width:100%;
+        transform: translateX(5%);
+    }
+    .LogInFlex div h4{
+        display: inline;
     }
 
     .burger {
@@ -1396,9 +1530,6 @@ tbody{
         height: 700px;
     }
 
-    .ThirdSection {
-        min-height: 1100px;
-    }
 
     .ThirdSection .Cards {
         margin-top: 20px;
@@ -1432,7 +1563,10 @@ tbody{
         width: 50%;
     }
 
-    /* services */
+    /* AboutME */
+    .AboutMe-Content {
+        margin-left: 30px;
+    }
 
     /* plans */
     .PlansBoxFlex {
@@ -1446,6 +1580,7 @@ tbody{
     /* Blog */
     .Blog{
         height: 2000px;
+        position: relative;
     }
     .Blog h2{
         margin-left: 170px;
@@ -1495,12 +1630,10 @@ tbody{
 /* Media Query for 810px */
 @media(max-width:810px) {
     .Plans {
-        height: 1600px;
+        height: auto;
     }
 
-    /* .PlansCard{
-        background-color: white;
-    } */
+   
     .FirstTopBox,
     .ThirdTopBox {
         background-color: rgba(255, 255, 255, 0.8);
@@ -1515,11 +1648,7 @@ tbody{
         justify-content: center;
 
     }
-
-    .personImg {
-        margin-top: 40px;
-    }
-
+    
     .logo {
         text-align: start;
         padding-left: 0;
@@ -1541,20 +1670,21 @@ tbody{
     .personImg {
         width: 500px;
         height: 600px;
+        margin-top: 40px;
+    }
+    .LeftFloat{
+        padding-left: 0;
     }
 
-    .ThirdSection {
-        min-height: 1100px;
-    }
-
-    .LeftFloat {
-        padding-left: 50px;
-    }
+    
 
     .Cards {
         width: 90%;
         grid-template-columns: 1fr;
     }
+    /* .ThirdSection h2{
+        text-align: left;
+    } */
 
     /* services */
 
@@ -1566,13 +1696,6 @@ tbody{
         display: none;
     }
 
-    .main-container {
-        min-height: 100vh;
-    }
-
-    .Services-Section {
-        min-height: 1200px;
-    }
 
     .Services-Section h2 {
         margin-left: 20px;
@@ -1665,7 +1788,6 @@ tbody{
     .SecondBlogCard,
     .ForthBlogCard,
     .SixthBlogCard{
-        /* margin-top: 500px; */
          transform: translate(27%,85%);
 
     }
@@ -1675,6 +1797,33 @@ tbody{
         position: static;
         transform: translate(40%,3700%);
     }
+    /* About me */
+    .AboutMe-Relative img{
+        width: 90%;
+        top: -700px;
+        right: 5%;
+    }
+    .AboutMe-Content h4{
+        margin-top: 600px;
+    }
+    .AboutMe-Content{
+        margin-left: 50px;
+        max-width: 768px;
+    }
+    .AboutMeFlex{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 50px;
+    }
+    .AboutMeFlex div:first-child{
+        margin-right: 0;
+    }
+    .Second-P,.Third-P{
+        max-width: 500px;
+    }
+
     
 }
 
@@ -1683,18 +1832,20 @@ tbody{
     .main-container {
         max-width: 668px;
         width: 100%;
-        ;
         margin: 0px 0px;
     }
 
     .ThirdSection {
-        height: 1350px;
         background-image: none;
     }
-
-    .ThirdSection h2 {
-        margin-left: 185px;
+    .ThirdSection h2{
+        text-align: right;
+        margin-left: 0;
     }
+    .ThirdSection h2::before{
+        margin-left:100px;
+    }
+
 
     .CardButton1 {
         margin: 20px;
@@ -1756,7 +1907,6 @@ tbody{
     .SecondBlogCard,
     .ForthBlogCard,
     .SixthBlogCard{
-        /* margin-top: 500px; */
          transform: translate(17%,85%);
 
     }
@@ -1768,12 +1918,6 @@ tbody{
     }
 }
 
-/* media query for 650px (Mobile) */
-@media (max-width: 650px) {
-    .Services-Section {
-        height: 1900px;
-    }
-}
 
 /* Media quey for 581px */
  @media(max-width:582px){
@@ -1821,6 +1965,10 @@ tbody{
         position: static;
         transform: translate(40%,3700%);
     }
+    
+    .ThirdSection h2::before{
+        margin-left:100px;
+    }
  }
 /* Media Query for 480px (Mobile) */
 @media (max-width: 480px) {
@@ -1846,9 +1994,11 @@ tbody{
     }
 
     .ThirdSection h2 {
-        margin-left: 15px;
+        text-align: center;
     }
-
+    .ThirdSection h2::before{
+        margin-left:50px;
+    }
     .LeftFloat {
         padding-left: 10px;
         width: 90%;
@@ -1942,6 +2092,22 @@ tbody{
         position: static;
         transform: translate(40%,3700%);
     }
+    /* ABout me */
+    .AboutMe-BG h2{
+        margin-left: 50px;
+    }
+    .AboutMe-Content h4{
+        margin-top: 350px;
+    }
+    .AboutMe-Relative img{
+        top: -450px;
+    }
+    .AboutMe-Content{
+        margin-left: 4%;
+    }
+    .First-P,.Second-P,.Third-P{
+        max-width: 450px;
+    }
 }
 
 /* media query for 414px */
@@ -1955,6 +2121,21 @@ tbody{
     }
     .Blog h2{
         margin-left: 5px;
+    }
+    /*  about me */
+    .AboutMe-Content{
+        margin-left: 0;
+    }
+    .First-P,.Second-P,.Third-P{
+        max-width: 350px;
+        margin-left: 5%;
+    }
+    .AboutMeFlex{
+        margin-left: 5%;
+        width: 65%;
+    }
+    .AboutMeFlex span:nth-child(even){
+        margin-left: 13px;
     }
 
 }

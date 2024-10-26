@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('nav ul li a');
     const button4 = document.getElementById('button4');
     const moreServicesButton = document.querySelector('#FSbutton');
+    const aboutMeButton = document.querySelector('.FirstButt')
     const scrollUp = document.querySelector('.ScrollUp');
     const burger = document.getElementById('burger');
     const navLinksContainer = document.querySelector('.nav-links');
@@ -12,49 +13,49 @@ document.addEventListener('DOMContentLoaded', function () {
     const arrowIcon = selectService ? selectService.querySelector('.fa-angle-down') : null;
     const serviceLabel = selectService ? selectService.querySelector('.service-label') : null;
 
-    // Reset nav link colors
-    function resetLinkColors() {
-        navLinks.forEach(link => {
-            link.style.color = '';
-        });
-    }
+    // // Reset nav link colors
+    // function resetLinkColors() {
+    //     navLinks.forEach(link => {
+    //         link.style.color = '';
+    //     });
+    // }
 
-    // Set active link based on scroll position
-    function setActiveLink() {
-        let foundActive = false;
+    // // Set active link based on scroll position
+    // function setActiveLink() {
+    //     let foundActive = false;
 
-        navLinks.forEach(link => {
-            const targetHref = link.getAttribute('href');
-            const section = document.querySelector(targetHref.startsWith('#') ? targetHref : `#${targetHref.split('/').pop()}`);
+    //     navLinks.forEach(link => {
+    //         const targetHref = link.getAttribute('href');
+    //         const section = document.querySelector(targetHref.startsWith('#') ? targetHref : `#${targetHref.split('/').pop()}`);
 
-            if (section) {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
+    //         if (section) {
+    //             const sectionTop = section.offsetTop;
+    //             const sectionHeight = section.offsetHeight;
 
-                if (window.scrollY >= sectionTop - 10 && window.scrollY < sectionTop + sectionHeight) {
-                    resetLinkColors();
-                    link.style.color = '#317F81';
-                    foundActive = true;
-                }
-            }
-        });
+    //             if (window.scrollY >= sectionTop - 10 && window.scrollY < sectionTop + sectionHeight) {
+    //                 resetLinkColors();
+    //                 link.style.color = '#317F81';
+    //                 foundActive = true;
+    //             }
+    //         }
+    //     });
 
-        if (!foundActive) {
-            resetLinkColors();
-        }
-    }
+    //     if (!foundActive) {
+    //         resetLinkColors();
+    //     }
+    // }
 
-    // Add click event listener for nav links
-    navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            resetLinkColors();
-            this.style.color = '#317F81';
-            localStorage.setItem('activeLink', this.getAttribute('href'));
-        });
-    });
+    // // Add click event listener for nav links
+    // navLinks.forEach(link => {
+    //     link.addEventListener('click', function () {
+    //         resetLinkColors();
+    //         this.style.color = '#317F81';
+    //         localStorage.setItem('activeLink', this.getAttribute('href'));
+    //     });
+    // });
 
-    // Set active link on scroll
-    window.addEventListener('scroll', setActiveLink);
+    // // Set active link on scroll
+    // window.addEventListener('scroll', setActiveLink);
 
     // Button 4 functionality
     if (button4) {
@@ -75,6 +76,18 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.error('Button with ID "FSbutton" not found.');
     }
+    // About Me Button Click Functionality
+    if (aboutMeButton) {
+        aboutMeButton.addEventListener('click', function () {
+            console.log('Button clicked! Redirecting to aboutMe.html...');
+            window.location.href = './pages/aboutMe.html';
+        });
+    } else {
+        console.error('Button with class "FirstButt" not found.');
+    }
+
+
+
 
     // Underline functionality for category tabs
     const CategoryTabs = document.querySelectorAll('.service-option');
@@ -417,10 +430,4 @@ function toggleSortMenu() {
   } else {
     menu.classList.add('hidden');
   }
-}
-
-// Sorting function placeholder (implement sorting logic)
-function sortBy(criteria) {
-  console.log('Sorting by:', criteria);
-  // Implement the actual sorting functionality here
 }
