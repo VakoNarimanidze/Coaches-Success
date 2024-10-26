@@ -1310,12 +1310,14 @@ section h2::before {
 .file-table th input[type="checkbox"], .file-table td input[type="checkbox"]{
     width: 15px;
     height: 15px;
+    border-radius: none;
 }
-.file-table tr:nth-child(even) {
+tbody tr:last-child{
+    margin-bottom: 200px;
+}
+tbody tr:hover{
   background-color: #f9f9f9;
 }
-/*  guides */
-
 .title {
     font-size: 14px;
     font-weight: bold;
@@ -1331,7 +1333,6 @@ section h2::before {
     width: 100%;
     padding: 8px 35px 8px 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 .search-bar i {
@@ -1365,14 +1366,6 @@ tbody{
     color: #317F81;
     cursor: pointer;
 }
-.favorite-icon i.far {
-    animation: heartBeat 0.3s ease; /* Add heart animation */
-}
-@keyframes heartBeat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
 
   
   .hidden {
@@ -1385,6 +1378,8 @@ tbody{
     border: 1px solid #ccc;
     padding: 10px;
     margin-top: 10px;
+    top: 50%;
+    right: 11%;
   }
   
   .sort-menu ul {
@@ -1396,6 +1391,9 @@ tbody{
   .sort-menu li {
     cursor: pointer;
     padding: 5px 10px;
+  }
+  .sort-menu li:hover{
+    background-color: #ccc;
   }
 
 /* Make the layout responsive */
