@@ -223,18 +223,27 @@ nav hr{
 /* Content styling on top of the video */
 .content {
     position: relative;
-    z-index: 9; /* Keep content above the background */
+    z-index: 9; 
     text-align: center;
     color: black;
     padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .content h4 {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.4em;
     margin-bottom: 34px;
     padding-top: 80px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: 500
+}
+.content h3{
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
 .content h1 {
@@ -242,7 +251,6 @@ nav hr{
     letter-spacing: 10px;
     line-height: 1em;
     font-weight: 900;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -449,6 +457,7 @@ nav hr{
     background-color: black;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 .button4Flex {
@@ -2056,9 +2065,6 @@ tbody{
         min-height: 100vh;
     }
 
-    .Services-Section {
-        min-height: 1900px;
-    }
 
     .Services-Section h2 {
         margin-left: 20px;
