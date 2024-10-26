@@ -1204,13 +1204,13 @@ section h2::before {
 }
 
 .Likes i {
-    color: red; /* Default color for unliked heart */
+    color: red; 
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .Likes i.liked {
-    animation: heartBeat 0.3s ease; /* Add heart animation */
+    animation: heartBeat 0.3s ease; 
 }
 @keyframes heartBeat {
     0% { transform: scale(1); }
