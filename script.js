@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (aboutMeButton) {
         aboutMeButton.addEventListener('click', function () {
             console.log('Button clicked! Redirecting to aboutMe.html...');
-            window.location.href = '.aboutMe.html';
+            window.location.href = 'aboutMe.html';
         });
     } else {
         console.error('Button with class "FirstButt" not found.');
