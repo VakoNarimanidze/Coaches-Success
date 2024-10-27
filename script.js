@@ -86,9 +86,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Button with class "FirstButt" not found.');
     }
 
-
-
-
     // Underline functionality for category tabs
     const CategoryTabs = document.querySelectorAll('.service-option');
     const underline = document.querySelector('.underline');
