@@ -975,7 +975,9 @@ section h2::before {
     height: 3px;
     background-color: black;
 }
-
+.plansBenefits {
+    border-top: 2px solid black;
+}
 .plansBenefits div {
     display: flex;
     justify-content: center;
@@ -1783,7 +1785,7 @@ tbody{
 
     .plansBenefits {
         display: none;
-        border-top: 1px solid black;
+        border-top: 2px solid black;
     }
 
     /* Arrow button styling */
