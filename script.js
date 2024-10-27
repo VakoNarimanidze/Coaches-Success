@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (button4) {
         button4.addEventListener('click', function () {
             console.log('Button clicked! Redirecting to services.html...');
-            window.location.href = './pages/Services.html';
+            window.location.href = 'Services.html';
         });
     } else {
         console.error('Button with ID "button4" not found.');
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (moreServicesButton) {
         moreServicesButton.addEventListener('click', function () {
             console.log('Button clicked! Redirecting to services.html...');
-            window.location.href = './pages/Services.html';
+            window.location.href = 'Services.html';
         });
     } else {
         console.error('Button with ID "FSbutton" not found.');
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (aboutMeButton) {
         aboutMeButton.addEventListener('click', function () {
             console.log('Button clicked! Redirecting to aboutMe.html...');
-            window.location.href = './pages/aboutMe.html';
+            window.location.href = '.aboutMe.html';
         });
     } else {
         console.error('Button with class "FirstButt" not found.');
