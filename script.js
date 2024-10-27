@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (button4) {
         button4.addEventListener('click', function () {
             console.log('Button clicked! Redirecting to services.html...');
-            window.location.href = 'Services.html';
+            window.location.href = 'services.html';
         });
     } else {
         console.error('Button with ID "button4" not found.');
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (moreServicesButton) {
         moreServicesButton.addEventListener('click', function () {
             console.log('Button clicked! Redirecting to services.html...');
-            window.location.href = 'Services.html';
+            window.location.href = 'services.html';
         });
     } else {
         console.error('Button with ID "FSbutton" not found.');
