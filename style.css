@@ -1562,7 +1562,8 @@ tbody {
 }
 
 .InnerBlogContent h1,
-h2 {
+.InnerBlogContent h2
+ {
     font-family: "Righteous", sans-serif !important;
     font-weight: bold 800;
     ;
