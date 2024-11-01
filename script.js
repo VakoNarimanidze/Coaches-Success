@@ -12,6 +12,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const arrowIcon = selectService ? selectService.querySelector('.fa-angle-down') : null;
     const serviceLabel = selectService ? selectService.querySelector('.service-label') : null;
 
+
+
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+      
+        if (window.scrollY > 110) {
+          header.classList.add('fixed-header');
+        } else {
+          header.classList.remove('fixed-header');
+        }
+      });
+      
+      
     // Button 4 functionality
     if (button4) {
         button4.addEventListener('click', function () {
