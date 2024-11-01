@@ -1904,7 +1904,6 @@ tbody {
         padding-right: 0;
         display: inline-block;
         width: 100%;
-        transform: translateX(5%);
     }
 
     .LogInFlex div h4 {

@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const navLinks = document.querySelectorAll('nav ul li a');
     const button4 = document.getElementById('button4');
     const moreServicesButton = document.querySelector('#FSbutton');
     const aboutMeButton = document.querySelector('.FirstButt')
@@ -12,50 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const dropdownOptions = dropdown ? dropdown.querySelectorAll('.dropdown-option') : [];
     const arrowIcon = selectService ? selectService.querySelector('.fa-angle-down') : null;
     const serviceLabel = selectService ? selectService.querySelector('.service-label') : null;
-
-    // // Reset nav link colors
-    // function resetLinkColors() {
-    //     navLinks.forEach(link => {
-    //         link.style.color = '';
-    //     });
-    // }
-
-    // // Set active link based on scroll position
-    // function setActiveLink() {
-    //     let foundActive = false;
-
-    //     navLinks.forEach(link => {
-    //         const targetHref = link.getAttribute('href');
-    //         const section = document.querySelector(targetHref.startsWith('#') ? targetHref : `#${targetHref.split('/').pop()}`);
-
-    //         if (section) {
-    //             const sectionTop = section.offsetTop;
-    //             const sectionHeight = section.offsetHeight;
-
-    //             if (window.scrollY >= sectionTop - 10 && window.scrollY < sectionTop + sectionHeight) {
-    //                 resetLinkColors();
-    //                 link.style.color = '#317F81';
-    //                 foundActive = true;
-    //             }
-    //         }
-    //     });
-
-    //     if (!foundActive) {
-    //         resetLinkColors();
-    //     }
-    // }
-
-    // // Add click event listener for nav links
-    // navLinks.forEach(link => {
-    //     link.addEventListener('click', function () {
-    //         resetLinkColors();
-    //         this.style.color = '#317F81';
-    //         localStorage.setItem('activeLink', this.getAttribute('href'));
-    //     });
-    // });
-
-    // // Set active link on scroll
-    // window.addEventListener('scroll', setActiveLink);
 
     // Button 4 functionality
     if (button4) {
