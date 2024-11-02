@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,39 +15,38 @@
         href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Lexend:wght@100..900&display=swap"
         rel="stylesheet">
 </head>
+
 <body>
     <div class="main-container">
-    <header id="header">
-        <nav>
-            <div class="logo">
-                <a href="index.html">
-                    <h2>ALLAN JOHNSON</h2>
-                    <h4>Personal Life Coach</h4>
-                </a>
-            </div>
-             <div id="burger" class="burger"><i class="fas fa-bars"></i></div>
-            <ul class="nav-links">
-                <li><a href="index.html#SecondSection">About</a></li>
-                <hr>
-                <li><a href="Services.html">Services</a></li>
-                <hr>
-                <li><a href="Plans.html">Plans</a></li>
-                <hr>
-                <li><a href="blog.html">Blog</a></li>
-                <hr>
-                <li><a href="guides.html">Guides</a></li>
-                <hr>
-                <li><a href="index.html#Contact">Contact</a></li>
-                <hr>
-               <li class="LogInFlex">
-                    <div class="log-in">
-                            <i class="fa-solid fa-circle-user"></i>
-                        <h4><a href="">Log in</a></h4>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
+        <header id="header">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <h2>ALLAN JOHNSON</h2>
+                        <h4>Personal Life Coach</h4>
+                    </a>
+                </div>
+                <div id="burger" class="burger"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="index.html#SecondSection">About</a></li>
+                    <hr>
+                    <li><a href="Services.html">Services</a></li>
+                    <hr>
+                    <li><a href="Plans.html">Plans</a></li>
+                    <hr>
+                    <li><a href="blog.html">Blog</a></li>
+                    <hr>
+                    <li><a href="guides.html">Guides</a></li>
+                    <hr>
+                    <li><a href="index.html#Contact">Contact</a></li>
+                    <hr>
+                    <li id="LogInFlex" class="LogInFlex">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <a href="/login.html">Log In</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
         <div class="FullResChatIcon">
             <i class="fas fa-comment-dots"></i>
@@ -62,8 +62,10 @@
         </div>
         <section class="Guides BG-Img">
             <h2>GUIDES</h2>
-            <p class="guides-p">Use this area to upload files you wish to share with your users. You can manage who has access to your files and what they can do, such as view & download, upload items and more.</ class="guies-p">
-            
+            <p class="guides-p">Use this area to upload files you wish to share with your users. You can manage who has
+                access to your files and what they can do, such as view & download, upload items and more.</
+                    class="guies-p">
+
 
             <div class="table-container">
                 <div class="table-header">
@@ -73,7 +75,7 @@
                         <i class="fas fa-search"></i>
                     </div>
                 </div>
-            
+
                 <table class="file-table">
                     <thead>
                         <tr>
@@ -87,61 +89,67 @@
                             <th class="favorites">Favorites</th>
                             <th class="contributors">Contributors</th>
                             <th class="options">
-                                    <i class="fas fa-arrow-up-long" id="sort-arrow-up"></i><i class="fas fa-arrow-down-long" id="sort-arrow-down"></i>
+                                <i class="fas fa-arrow-up-long" id="sort-arrow-up"></i><i class="fas fa-arrow-down-long"
+                                    id="sort-arrow-down"></i>
                             </th>
                         </tr>
                     </thead>
                     <div id="sort-menu" class="sort-menu hidden">
                         <ul>
-                          <li onclick="sortBy('item-name')">Item Name</li>
-                          <li onclick="sortBy('last-updated')">Last Updated</li>
-                          <li onclick="sortBy('views')">Views</li>
-                          <li onclick="sortBy('favorites')">Favorites</li>
-                          <li onclick="sortBy('file-type')">File Type</li>
-                          <li onclick="sortBy('file-size')">File Size</li>
+                            <li onclick="sortBy('item-name')">Item Name</li>
+                            <li onclick="sortBy('last-updated')">Last Updated</li>
+                            <li onclick="sortBy('views')">Views</li>
+                            <li onclick="sortBy('favorites')">Favorites</li>
+                            <li onclick="sortBy('file-type')">File Type</li>
+                            <li onclick="sortBy('file-size')">File Size</li>
                         </ul>
-                      </div>
+                    </div>
                     <tbody>
                         <tr>
                             <td><input type="checkbox" class="file-checkbox"></td>
-                            <td style="color:#317F81 ; font-size: 30px; cursor: pointer;"><i class="fas fa-folder"></i></td>
-                            <td  class="itemNameTH">
+                            <td style="color:#317F81 ; font-size: 30px; cursor: pointer;"><i class="fas fa-folder"></i>
+                            </td>
+                            <td class="itemNameTH">
                                 <div>
                                     <h3>Free Tools</h3>
                                     <p>1 item</p>
                                 </div>
-                                </td>
+                            </td>
                             <td class="last-updated-TH">Sep 3,2024</td>
                             <td class="view-TH">161</td>
                             <td class="favorites-TH"><i class="far fa-star favorite-icon"></i></td>
                             <td class="contributors-TH">
-                                <i style="font-size: 26px; vertical-align: middle; color: gray; padding-right: 5px;" class="fas fa-circle-user"></i>
-                                <span>Admin</span></td>
+                                <i style="font-size: 26px; vertical-align: middle; color: gray; padding-right: 5px;"
+                                    class="fas fa-circle-user"></i>
+                                <span>Admin</span>
+                            </td>
                             <td class="options-TH"><i class="fas fa-ellipsis-vertical"></i></td>
                         </tr>
                         <tr>
                             <td><input type="checkbox" class="file-checkbox"></td>
-                            <td style="color:#317F81 ; font-size: 30px; cursor: pointer;"><i class="fas fa-folder"></i></td>
-                            <td  class="itemNameTH">
+                            <td style="color:#317F81 ; font-size: 30px; cursor: pointer;"><i class="fas fa-folder"></i>
+                            </td>
+                            <td class="itemNameTH">
                                 <div>
                                     <h3>Free Tools</h3>
                                     <p>0 items</p>
                                 </div>
-                                </td>
+                            </td>
                             <td class="last-updated-TH">Jul 27,2021</td>
                             <td class="view-TH">37</td>
                             <td class="favorites-TH"><i class="far fa-star favorite-icon"></i></td>
-                            <td  class="contributors-TH">
-                                <i style="font-size: 26px; vertical-align: middle; color: gray; padding-right: 5px;" class="fas fa-circle-user"></i>
+                            <td class="contributors-TH">
+                                <i style="font-size: 26px; vertical-align: middle; color: gray; padding-right: 5px;"
+                                    class="fas fa-circle-user"></i>
                                 <span>Admin</span>
-                                </td>
+                            </td>
                             <td class="options-TH"><i class="fas fa-ellipsis-vertical"></i></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            
-            
+
+
 
         </section>
 
@@ -176,7 +184,7 @@
                             <input type="text" id="lastName" name="lastName" required>
                         </div>
                     </div>
-    
+
                     <label for="email">Email*</label>
                     <input type="email" id="email" name="email" required>
                     <label for="subject">Subject</label>
@@ -184,15 +192,18 @@
                     <label for="message">Message</label>
                     <textarea name="message" id="message"></textarea>
                     <div class="buttonFlex">
-                        
+
                         <input class="submit" type="submit">
                     </div>
                 </form>
             </div>
         </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    
+
 </body>
+
 </html>

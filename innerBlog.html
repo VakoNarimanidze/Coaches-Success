@@ -40,11 +40,9 @@
                     <hr>
                     <li><a href="index.html#Contact">Contact</a></li>
                     <hr>
-                    <li class="LogInFlex">
-                        <div class="log-in">
-                            <i class="fa-solid fa-circle-user"></i>
-                            <h4><a href="">Log in</a></h4>
-                        </div>
+                    <li id="LogInFlex" class="LogInFlex">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <a href="/login.html">Log In</a>
                     </li>
                 </ul>
             </nav>
@@ -52,6 +50,7 @@
         <section class="innerBlog">
             <div class="allPosts">
                 <h4>All Posts</h4>
+                <h4 class="Hidden">Post</h4>
                 <i class="fab fa-sistrix"></i>
             </div>
             <div class="InnerBlogContent">
@@ -107,7 +106,7 @@
                 <hr class="secondHr">
                 <div class="BlogFlex innerBlogFlex">
                     <div class="BlogFlex View-Comments">
-                        <h4> <i class="fas fa-eye"></i>4 views</h4>
+                        <h4> <i class="fas fa-eye"></i><p>4</p>  <span> views</span></h4>
                         <h4> <i class="fas fa-comment"></i>
                             <p style="font-size: 15px;">0</p> <span>comment</span>
                         </h4>
@@ -124,54 +123,63 @@
                 <h4>Recent Posts</h4>
                 <h5>See All</h4>
             </div>
-            <div class="innerBlogCards">
-                <div class="border">
-                    <img src="/Images/TakingActionsImg.webp" alt="">
-                    <h3>WHY TAKING ACTION CREATE...</h3>
-                    <hr>
-                    <div class="InnerBlogFlex padding-inline">
-                        <div class="InnerBlogFlex">
-                            <h4><i style="width:25px;" class="fas fa-eye"></i>6</h4>
-                            <h4><i style="width: 25px;" class="fas fa-comment"></i>0</h4>
+            <section>
+                <div class="innerBlogCards">
+                    <div class="border">
+                        <img src="/Images/TakingActionsImg.webp" alt="">
+                        <h3>WHY TAKING ACTION CREATE...</h3>
+                        <hr>
+                        <div class="InnerBlogFlex padding-inline">
+                            <div class="InnerBlogFlex">
+                                <h4><i style="width:25px;" class="fas fa-eye"></i>6</h4>
+                                <h4><i style="width: 25px;" class="fas fa-comment"></i>0</h4>
+                            </div>
+                            <div class="Likes">
+                                <span class="LikesCount">5</span>
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
                         </div>
-                        <div class="Likes">
-                            <span id="LikesCount">5</span>
-                            <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="border">
+                        <img src="/Images/TimeForChange.webp" alt="">
+                        <h3>TIME FOR A CHANGE</h3>
+                        <hr>
+                        <div class="InnerBlogFlex padding-inline">
+                            <div class="InnerBlogFlex">
+                                <h4><i style="width: 25px;" class="fas fa-eye"></i>6</h4>
+                                <h4><i style="width: 25px;" class="fas fa-comment"></i>0</h4>
+                            </div>
+                            <div class="Likes">
+                                <span class="LikesCount">0</span>
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border">
+                        <img src="/Images/Getting a grasp on adventure.webp" alt="">
+                        <h3>GETTING A GRASP ON...</h3>
+                        <hr>
+                        <div class="InnerBlogFlex padding-inline">
+                            <div class="InnerBlogFlex">
+                                <h4><i style="width: 25px;" class="fas fa-eye"></i>6</h4>
+                                <h4><i style="width: 25px;" class="fas fa-comment"></i>0</h4>
+                            </div>
+                            <div class="Likes">
+                                <span class="LikesCount">0</span>
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="border">
-                    <img src="/Images/TimeForChange.webp" alt="">
-                    <h3>TIME FOR A CHANGE</h3>
-                    <hr>
-                    <div class="InnerBlogFlex padding-inline">
-                        <div class="InnerBlogFlex">
-                            <h4><i style="width: 25px;" class="fas fa-eye"></i>6</h4>
-                            <h4><i style="width: 25px;" class="fas fa-comment"></i>0</h4>
-                        </div>
-                        <div class="Likes">
-                            <span id="LikesCount">0</span>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
+                <div class="scroll-indicators">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
-                <div class="border">
-                    <img src="/Images/Getting a grasp on adventure.webp" alt="">
-                    <h3>GETTING A GRASP ON...</h3>
-                    <hr>
-                    <div class="InnerBlogFlex padding-inline">
-                        <div class="InnerBlogFlex">
-                            <h4><i style="width: 25px;" class="fas fa-eye"></i>6</h4>
-                            <h4><i style="width: 25px;" class="fas fa-comment"></i>0</h4>
-                        </div>
-                        <div class="Likes">
-                            <span id="LikesCount">0</span>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+            
+        <hr style="display: none;" class="thirdHr">
+        <hr style="display: none;" class="forthHr">
         <section class="Comments">
             <div class="comments">
                 <h4>COMMENTS</h4>
@@ -210,7 +218,7 @@
                             <input type="text" id="lastName" name="lastName" required>
                         </div>
                     </div>
-    
+
                     <label for="email">Email*</label>
                     <input type="email" id="email" name="email" required>
                     <label for="subject">Subject</label>
@@ -218,7 +226,7 @@
                     <label for="message">Message</label>
                     <textarea name="message" id="message"></textarea>
                     <div class="buttonFlex">
-                        
+
                         <input class="submit" type="submit">
                     </div>
                 </form>

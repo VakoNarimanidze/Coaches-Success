@@ -426,3 +426,107 @@ function toggleSortMenu() {
     menu.classList.add('hidden');
   }
 }
+// log In//
+function validateForm() {
+    // Determine which form is currently being submitted
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    
+    let isLoginForm = false;
+
+    // Check if the login form is currently visible
+    if (loginForm.style.display !== 'none') {
+        isLoginForm = true;
+    }
+
+    // Select inputs based on the form type
+    const inputs = isLoginForm 
+        ? loginForm.querySelectorAll('input[required]') 
+        : signupForm.querySelectorAll('input[required]');
+
+    let emptyFound = false; 
+
+    for (let input of inputs) {
+        if (!input.value.trim()) {
+            emptyFound = true; 
+            input.focus(); 
+            break;
+        }
+    }
+
+    // Show alert only if there was an empty input
+    if (emptyFound) {
+        alert("Please fill the empty blank.");
+        return false; 
+    }
+
+    // Additional password length check for sign-up form
+    if (!isLoginForm) {
+        const newPassword = document.getElementById('newPassword').value;
+        if (newPassword.length < 8) {
+            alert("Password must have at least 8 letters.");
+            return false; 
+        }
+    }
+
+    return true; 
+}
+
+
+
+
+
+function toggleForm() {
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const loginHeader = loginForm.querySelector('h2');
+
+    // Toggle visibility of forms and the header
+    if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        loginHeader.style.display = 'block';
+    } else {
+        signupForm.style.display = 'block';
+        loginForm.style.display = 'none';
+        loginHeader.style.display = 'block';
+    }
+}
+
+// innerblog
+
+
+const blogCardsContainer = document.querySelector('.innerBlogCards');
+const cards = document.querySelectorAll('.innerBlogCards .border');
+const dots = document.querySelectorAll('.dot');
+
+// Function to update active dot based on scroll position
+function updateActiveDot() {
+    const scrollPosition = blogCardsContainer.scrollLeft;
+    const cardWidth = blogCardsContainer.clientWidth; // Width of the visible area
+    const activeIndex = Math.floor(scrollPosition / cardWidth); // Updated to Math.floor for correct index
+
+    // Update active class on dots
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeIndex);
+    });
+}
+
+// Scroll event listener to update the active dot as you scroll
+blogCardsContainer.addEventListener('scroll', updateActiveDot);
+
+// Scroll to specific card when a dot is clicked
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        const cardWidth = blogCardsContainer.clientWidth; // Width of the visible area
+
+        // Scroll to the selected card
+        blogCardsContainer.scrollTo({
+            left: index * cardWidth,
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Initialize active dot on load
+window.addEventListener('load', updateActiveDot);
