@@ -530,3 +530,13 @@ dots.forEach((dot, index) => {
 
 // Initialize active dot on load
 window.addEventListener('load', updateActiveDot);
+
+// All posts Click//
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     // Attach click event to the h4 element
+//     document.getElementById("AllPosts").addEventListener("click", function() {
+//         window.location.href = "blogFeed.html"; // Change to the desired URL
+//     });
+// });
