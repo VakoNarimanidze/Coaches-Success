@@ -12,18 +12,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const arrowIcon = selectService ? selectService.querySelector('.fa-angle-down') : null;
     const serviceLabel = selectService ? selectService.querySelector('.service-label') : null;
 
-
-
     window.addEventListener('scroll', () => {
         const header = document.getElementById('header');
       
-        if (window.scrollY > 110) {
+        if (window.scrollY > 110 && window.innerWidth > 1024) {
           header.classList.add('fixed-header');
         } else {
           header.classList.remove('fixed-header');
         }
       });
-      
       
     // Button 4 functionality
     if (button4) {
@@ -199,7 +196,6 @@ function reorderPlansCards() {
     } else {
         // Ensure the cards are in the original order when above 768px
         if (plansBoxFlex && plansCards.length >= 3) {
-            // Move the cards back to their original positions
             plansBoxFlex.appendChild(plansCards[0]); // First card
             plansBoxFlex.appendChild(plansCards[1]); // Second card
             plansBoxFlex.appendChild(plansCards[2]); // Third card
@@ -211,7 +207,6 @@ function reorderPlansCards() {
 plansCards.forEach(card => {
     const benefits = card.querySelector(".plansBenefits");
 
-    // Set display flex by default for larger screens
     if (window.innerWidth > 768) {
         benefits.style.display = "flex"; // Visible above 768px
     } else {
@@ -533,10 +528,12 @@ window.addEventListener('load', updateActiveDot);
 
 // All posts Click//
 
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     // Attach click event to the h4 element
-//     document.getElementById("AllPosts").addEventListener("click", function() {
-//         window.location.href = "blogFeed.html"; // Change to the desired URL
-//     });
-// });
+const SeeAll = document.getElementById('SeeAll');
+if (SeeAll) {
+    SeeAll.addEventListener('click', function () {
+        window.location.href = "./blogFeed.html";
+    });
+} else {
+    console.error('Element with ID "SeeAll" not found.');
+}
+// SecondTableContainer favIcon//

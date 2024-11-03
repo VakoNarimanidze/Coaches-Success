@@ -69,7 +69,6 @@ nav ul li {
     padding-left: 32px;
     font-size: 14px;
 }
-
 nav ul li a:hover {
     color: #317F81;
     transition: 0.5s ease;
@@ -1541,6 +1540,21 @@ tbody {
 .sort-menu li:hover {
     background-color: #ccc;
 }
+/* SecondTableContainer */
+.SecondTableContainer{
+    display: none;
+    width: 80%;
+    margin-left: 10%;
+    background-color: white;
+    padding-inline: 20px;
+}
+.SecondTableContainer .TableFlex{
+    display: flex;
+    justify-content: space-between;
+}
+.TableFlex span{
+    margin-right: 20px;
+}
 
 /* InnerBlog */
 
@@ -1559,6 +1573,9 @@ tbody {
 .allPosts a{
     text-decoration: none;
     color: #000;
+}
+.allPosts a .Hidden{
+    color: white;
 }
 .allPosts a h4:hover{
     color: #317F81;
@@ -1739,6 +1756,10 @@ tbody {
     font-weight: 200;
     font-style: normal;
 }
+#SeeAll a{
+    text-decoration: none;
+    color: #000;
+}
 
 .recent-Posts h4,
 .recent-Posts h5 {
@@ -1746,7 +1767,7 @@ tbody {
     padding: 30px 0;
 }
 
-.recent-Posts .BlogFlex h5:hover {
+#SeeAll a:hover {
     color: #317F81;
     cursor: pointer;
 }
@@ -2315,6 +2336,74 @@ tbody {
         position: static;
         transform: translate(40%, 3700%);
     }
+    /* Guides */
+    .table-container{
+        display: none;
+    }
+
+    .Guides h2{
+        margin-left: 150px;
+    }
+    .guides-p{
+        padding-left: 150px;
+        width: 500px;
+    }
+    .SecondTableContainer{
+        display: block;
+        height: 450px;
+    }
+    .TableFlex{
+        padding-top: 30px;
+    }
+    .search-bar{
+        padding-top: 30px;
+        transform: translateX(100%);
+    }
+    .search-bar i{
+        top: 70%;
+    }
+    .FreeTools{
+        margin-top: 50px;
+    }
+    .FreeTools,.ClientsOnly{
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .FreeTools div,.ClientsOnly div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .FreeTools h5 span, .ClientsOnly h5 span{
+        font-size: 8px;
+    }
+    .FreeTools div:nth-child(1) span i,
+    .ClientsOnly div:nth-child(1) span i{
+        color: #317F81;
+        font-size: 20px;
+    }
+    .FreeTools h5 , .ClientsOnly h5{
+        padding-left: 25px;
+        padding-top: 10px;
+        font-weight: 400;
+    }
+    #Favorite-container {
+        margin: 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .Favorite-icon {
+        cursor: pointer; /* Show pointer on hover */
+        color: #ccc; /* Default color for unselected star */
+        font-size: 24px; /* Size of the star icon */
+        margin-right: 10px; /* Space between icons */
+    }
+
+    .Favorite-icon.fas {
+        color: #317F81; /* Color for selected star */
+    }
 
     /* innerBlog */
 
@@ -2688,7 +2777,7 @@ tbody {
         color: white;
     }
 
-    .allPosts:first-child h4 {
+    .allPosts a h4 {
         display: none;
     }
 
@@ -2897,6 +2986,22 @@ tbody {
     .ThirdSection h2::before {
         margin-left: 100px;
     }
+    /*  */
+    .Guides{
+        height: 730px;
+    }
+
+    .SecondTableContainer{
+        width: 100%;
+        margin-left: 0;
+    }
+    .Guides h2{
+        margin-left: 50px;
+    }
+    .guides-p{
+        padding-left: 50px;
+        width: 400px;
+    }
 }
 
 /* Media Query for 480px (Mobile) */
@@ -3064,6 +3169,25 @@ tbody {
     .InnerBlogContent h3::before {
         width: 17px;
         height: 220px;
+    }
+    /*  */
+    .Guides{
+        height: 800px;
+    }
+
+    .SecondTableContainer{
+        height: 600px;
+    }
+    .Guides h2{
+        margin-left: 10px;
+    }
+    .guides-p{
+        padding-left: 10px;
+        width: 300px;
+    }
+    .search-bar{
+        width: 100%;
+        transform: translateX(0);
     }
 
 }
