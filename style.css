@@ -2153,7 +2153,7 @@ tbody {
         background-color: white;
         padding: 20px 0;
         text-align: center;
-        z-index: 10;
+        z-index: 1000000;
     }
 
     .nav-links.active {
@@ -2162,6 +2162,7 @@ tbody {
 
     .nav-links li {
         padding: 15px 0;
+        font-size: 18px;
     }
 
     nav hr {
@@ -2219,6 +2220,45 @@ tbody {
     .ThirdSection .Cards {
         margin-top: 20px;
     }
+    #LogInFlex {
+        order: 1;
+        margin-bottom: 20px;
+    }
+    
+    #about {
+        order: 2;
+    }
+    #plans{
+        order: 4;
+    }
+    #services{
+        order: 3;
+    }
+    #blog{
+        order: 5;
+    }
+    #guides{
+        order: 6;
+    }
+    #contact{
+        order: 7;
+    }
+    
+#about::after,
+#plans::after,
+#services::after,
+#blog::after,
+#guides::after ,
+#contact:after{
+    content: "";
+    display: block; /* Make it a block element so it appears below the text */
+    width: 50%;
+    height: 2px;
+    background: #ccc;
+    margin: 0 auto; /* Centers the line */
+    margin-top: 4px; /* Space between text and line */
+}
+
 
     /* .LeftFloat {
         padding-left: 100px;
