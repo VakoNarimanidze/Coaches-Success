@@ -33,19 +33,8 @@ body.fade-out {
 header {
     position: static;
     top: 0;
-    z-index: 999;
     width: 100%;
     background-color: white;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    /* Smooth transition */
-}
-
-.fixed-header {
-    position: fixed;
-    top: 0;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 nav {
@@ -220,7 +209,6 @@ nav hr {
     overflow: hidden;
 }
 
-/* Video Background */
 .background-video {
     position: absolute;
     top: 0;
@@ -236,13 +224,12 @@ nav hr {
     height: 100vh;
     object-fit: cover;
     z-index: -1;
-    /* Keep it behind content */
 }
 
 /* Content styling on top of the video */
 .content {
     position: relative;
-    z-index: 9;
+    z-index: 1;
     text-align: center;
     color: black;
     padding: 20px;
@@ -331,7 +318,7 @@ nav hr {
     width: 200px;
 }
 
-.LeftFloat::before {
+.LeftFloat h2::before {
     content: '';
     display: block;
     width: 39px;
@@ -2910,6 +2897,12 @@ tbody {
     overflow: hidden;
     position: relative;
 }
+.BlogFeed{
+    height: 2900px;
+}
+.BlogFeed h2{
+    margin-left: 50px;
+}
 }
 
 
@@ -2950,7 +2943,7 @@ tbody {
     .FirstBlogCard,
     .ThirdBlogCard,
     .FifthBlogCard {
-        transform: translate(8.5%, 10%);
+        transform: translate(2%, 10%);
     }
 
 
@@ -3025,11 +3018,12 @@ tbody {
     }
 
     .ThirdSection h2 {
-        text-align: center;
+        text-align: left;
+        margin-left: 20px;
     }
 
     .ThirdSection h2::before {
-        margin-left: 50px;
+        margin-left: 0px;
     }
 
     .LeftFloat {
@@ -3118,7 +3112,7 @@ tbody {
     .FirstBlogCard,
     .ThirdBlogCard,
     .FifthBlogCard {
-        transform: translate(0%, 10%);
+        transform: translate(-7%, 10%);
     }
 
 
@@ -3126,9 +3120,7 @@ tbody {
     .SecondBlogCard,
     .ForthBlogCard,
     .SixthBlogCard {
-        /* margin-top: 500px; */
-        transform: translate(0%, 85%);
-
+        transform: translate(-7%, 85%);
     }
 
     .BlogCardRightSide {

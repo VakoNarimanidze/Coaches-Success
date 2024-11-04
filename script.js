@@ -12,15 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const arrowIcon = selectService ? selectService.querySelector('.fa-angle-down') : null;
     const serviceLabel = selectService ? selectService.querySelector('.service-label') : null;
 
-    window.addEventListener('scroll', () => {
-        const header = document.getElementById('header');
-      
-        if (window.scrollY > 110 && window.innerWidth > 1024) {
-          header.classList.add('fixed-header');
-        } else {
-          header.classList.remove('fixed-header');
-        }
-      });
       
     // Button 4 functionality
     if (button4) {
@@ -122,19 +113,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Burger icon functionality
-    if (burger) {
+    
+    if (burger && navLinksContainer) {
         burger.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('active');
-            burger.classList.toggle('toggle');
-            updateButtonVisibility();
+            navLinksContainer.classList.toggle('active'); // Toggle visibility of nav-links
+            burger.classList.toggle('toggle'); // Toggle animation on burger icon
+            updateButtonVisibility(); // Ensure no unexpected behavior in visibility
         });
     } else {
-        console.error('Burger icon not found.');
+        console.error('Burger icon or navigation links container not found.');
     }
 
     function updateButtonVisibility() {
         if (LogIn) {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 1024) {
                 LogIn.style.display = 'block';
             } else if (navLinksContainer.classList.contains('active')) {
                 LogIn.style.display = 'block';
@@ -142,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 LogIn.style.display = 'none';
             }
         } else {
-            console.error('.log-in element not found.');
         }
     }
 
